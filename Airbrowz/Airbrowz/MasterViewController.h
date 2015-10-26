@@ -14,8 +14,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *proximityRangeLabel;
 @property (weak, nonatomic) IBOutlet UISlider *proximitySlider;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *categoryCollectionView;
 
 
 - (IBAction)onProximitySelect:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+
+
 
 @end

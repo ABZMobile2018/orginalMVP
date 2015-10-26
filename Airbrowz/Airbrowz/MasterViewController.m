@@ -8,13 +8,20 @@
 
 #import "MasterViewController.h"
 #import "DealTableViewCell.h"
-@interface MasterViewController () <UITableViewDelegate>
+#import "CategoryCollectionViewCell.h"
+@interface MasterViewController () <UITableViewDelegate, UICollectionViewDelegate>
 
 
 
 @end
 
-@implementation MasterViewController
+@implementation MasterViewController {
+    
+    bool categoryIsHidden;
+    
+    
+}
+
 
 
 
@@ -28,11 +35,22 @@
     [self.proximitySlider setThumbImage:[UIImage imageNamed:@"SliderThumb"] forState:UIControlStateHighlighted];
     
     
+    categoryIsHidden = true;
+    self.categoryLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCategoryLabelClick)];
+    [self.categoryLabel addGestureRecognizer:tapGesture];
+    
     //self.proximitySlider.transform = CGAffineTransformMakeScale(0.5, 0.5);
 
    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
 
 }
+
+- (void) onCategoryLabelClick {
+    categoryIsHidden ? [self showCategories] : [self hideCategories];
+}
+
 - (IBAction)proximityChanged:(UISlider *)sender {
     NSString *distanceString;
     
@@ -53,6 +71,22 @@
 }
 
 
+
+- (void) showCategories {
+    categoryIsHidden = false;
+    NSLog(@"show cat");
+    [UIView animateWithDuration:0.1f animations:^{
+        self.categoryCollectionView.frame =
+        CGRectMake(self.categoryCollectionView.frame.origin.x,
+                   self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height,
+                   self.categoryCollectionView.frame.size.width,
+                   self.categoryCollectionView.frame.size.height);
+    }];
+}
+
+- (void) hideCategories {
+    
+}
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
@@ -80,7 +114,20 @@
     
 }
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return 10;
+}
 
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+#define CATEGORY_CELL_REUSE_ID @"CategoryCell"
+    CategoryCollectionViewCell *cell = [self.categoryCollectionView dequeueReusableCellWithReuseIdentifier:CATEGORY_CELL_REUSE_ID forIndexPath:indexPath];
+    
+    return cell;
+    
+    
+}
 
 
 

@@ -16,6 +16,7 @@
 		B09B264D1BDDE56E0053C595 /* AirbrowzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B264C1BDDE56E0053C595 /* AirbrowzUITests.m */; };
 		B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B265C1BDDF27C0053C595 /* MasterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		B09B265C1BDDF27C0053C595 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		B09B265F1BDE0BBF0053C595 /* DealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealTableViewCell.h; sourceTree = "<group>"; };
 		B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTableViewCell.m; sourceTree = "<group>"; };
+		B09B26651BDEBF6C0053C595 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 			children = (
 				B09B265F1BDE0BBF0053C595 /* DealTableViewCell.h */,
 				B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */,
+				B09B26651BDEBF6C0053C595 /* CategoryCollectionViewCell.h */,
+				B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */,
 				B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */,
 				B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */,
 				B09B26291BDDE56E0053C595 /* main.m in Sources */,
