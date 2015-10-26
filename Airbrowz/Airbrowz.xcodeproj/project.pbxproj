@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		B09B26291BDDE56E0053C595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26281BDDE56E0053C595 /* main.m */; };
 		B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B262B1BDDE56E0053C595 /* AppDelegate.m */; };
-		B09B262F1BDDE56E0053C595 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B262E1BDDE56E0053C595 /* ViewController.m */; };
 		B09B26321BDDE56E0053C595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09B26301BDDE56E0053C595 /* Main.storyboard */; };
 		B09B26341BDDE56E0053C595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B09B26331BDDE56E0053C595 /* Assets.xcassets */; };
 		B09B26371BDDE56E0053C595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09B26351BDDE56E0053C595 /* LaunchScreen.storyboard */; };
 		B09B26421BDDE56E0053C595 /* AirbrowzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26411BDDE56E0053C595 /* AirbrowzTests.m */; };
 		B09B264D1BDDE56E0053C595 /* AirbrowzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B264C1BDDE56E0053C595 /* AirbrowzUITests.m */; };
+		B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B265C1BDDF27C0053C595 /* MasterViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,6 @@
 		B09B26281BDDE56E0053C595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B09B262A1BDDE56E0053C595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B09B262B1BDDE56E0053C595 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B09B262D1BDDE56E0053C595 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B09B262E1BDDE56E0053C595 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B09B26311BDDE56E0053C595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B09B26331BDDE56E0053C595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B09B26361BDDE56E0053C595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,10 @@
 		B09B26481BDDE56E0053C595 /* AirbrowzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbrowzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09B264C1BDDE56E0053C595 /* AirbrowzUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirbrowzUITests.m; sourceTree = "<group>"; };
 		B09B264E1BDDE56E0053C595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B09B265B1BDDF27C0053C595 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		B09B265C1BDDF27C0053C595 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		B09B265F1BDE0BBF0053C595 /* DealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealTableViewCell.h; sourceTree = "<group>"; };
+		B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +104,10 @@
 		B09B26261BDDE56E0053C595 /* Airbrowz */ = {
 			isa = PBXGroup;
 			children = (
+				B09B26621BDE0BC90053C595 /* View */,
+				B09B265A1BDDF2350053C595 /* ViewControllers */,
 				B09B262A1BDDE56E0053C595 /* AppDelegate.h */,
 				B09B262B1BDDE56E0053C595 /* AppDelegate.m */,
-				B09B262D1BDDE56E0053C595 /* ViewController.h */,
-				B09B262E1BDDE56E0053C595 /* ViewController.m */,
 				B09B26301BDDE56E0053C595 /* Main.storyboard */,
 				B09B26331BDDE56E0053C595 /* Assets.xcassets */,
 				B09B26351BDDE56E0053C595 /* LaunchScreen.storyboard */,
@@ -138,6 +141,24 @@
 				B09B264E1BDDE56E0053C595 /* Info.plist */,
 			);
 			path = AirbrowzUITests;
+			sourceTree = "<group>";
+		};
+		B09B265A1BDDF2350053C595 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B09B265B1BDDF27C0053C595 /* MasterViewController.h */,
+				B09B265C1BDDF27C0053C595 /* MasterViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B09B26621BDE0BC90053C595 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B09B265F1BDE0BBF0053C595 /* DealTableViewCell.h */,
+				B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B09B262F1BDDE56E0053C595 /* ViewController.m in Sources */,
 				B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */,
+				B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */,
 				B09B26291BDDE56E0053C595 /* main.m in Sources */,
+				B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
