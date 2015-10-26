@@ -75,7 +75,7 @@
 - (void) showCategories {
     categoryIsHidden = false;
     NSLog(@"show cat");
-    [UIView animateWithDuration:0.1f animations:^{
+    [UIView animateWithDuration:0.08f animations:^{
         self.categoryCollectionView.frame =
         CGRectMake(self.categoryCollectionView.frame.origin.x,
                    self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height,
@@ -85,6 +85,15 @@
 }
 
 - (void) hideCategories {
+    categoryIsHidden = true;
+    NSLog(@"hide cat");
+    [UIView animateWithDuration:0.08f animations:^{
+        self.categoryCollectionView.frame =
+        CGRectMake(self.categoryCollectionView.frame.origin.x,
+                   self.categoryCollectionView.frame.origin.y + self.categoryCollectionView.frame.size.height,
+                   self.categoryCollectionView.frame.size.width,
+                   self.categoryCollectionView.frame.size.height);
+    }];
     
 }
 
