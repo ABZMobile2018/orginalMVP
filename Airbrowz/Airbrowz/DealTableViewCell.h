@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 @interface DealTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
+
+
+@property (weak, nonatomic) IBOutlet PFImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UILabel *dealHeadingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dealDistanceLabel;
 

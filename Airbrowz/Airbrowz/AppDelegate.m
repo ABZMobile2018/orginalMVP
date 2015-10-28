@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 @interface AppDelegate ()
 
 @end
@@ -24,7 +25,7 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+    [PFImageView class];
     
     return YES;
 }

@@ -18,7 +18,6 @@
 		B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B265C1BDDF27C0053C595 /* MasterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		B09B266B1BDED02C0053C595 /* CategoryEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B266A1BDED02C0053C595 /* CategoryEntry.m */; settings = {ASSET_TAGS = (); }; };
 		B09BB5421BE02F2E00E02FB3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */; };
 		B09BB5451BE0722D00E02FB3 /* AirbrowzCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -63,8 +62,6 @@
 		B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTableViewCell.m; sourceTree = "<group>"; };
 		B09B26651BDEBF6C0053C595 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
-		B09B26691BDED02C0053C595 /* CategoryEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryEntry.h; sourceTree = "<group>"; };
-		B09B266A1BDED02C0053C595 /* CategoryEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryEntry.m; sourceTree = "<group>"; };
 		B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B09BB5431BE0722D00E02FB3 /* AirbrowzCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirbrowzCommons.h; sourceTree = "<group>"; };
 		B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirbrowzCommons.m; sourceTree = "<group>"; };
@@ -206,8 +203,6 @@
 		B09B26681BDECFAE0053C595 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B09B26691BDED02C0053C595 /* CategoryEntry.h */,
-				B09B266A1BDED02C0053C595 /* CategoryEntry.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -395,7 +390,6 @@
 			files = (
 				B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */,
 				B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */,
-				B09B266B1BDED02C0053C595 /* CategoryEntry.m in Sources */,
 				B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */,
 				B09B26291BDDE56E0053C595 /* main.m in Sources */,
 				B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */,

@@ -11,20 +11,54 @@
 #import "CategoryCollectionViewCell.h"
 #import "AirbrowzCommons.h"
 #import <Parse/Parse.h>
+
 @interface MasterViewController () <UITableViewDelegate, UICollectionViewDelegate>
 
-@property NSMutableArray *categoryFilterArray;
-
+@property (strong, nonatomic) NSMutableArray *categoryFilterArray;
+@property (strong, nonatomic)  NSArray *dealsRawModel;
+@property (strong, nonatomic) NSArray *dealsFilteredModel;
+@property PFGeoPoint *currentLocation;
 @end
+
+
 
 @implementation MasterViewController {
     
     bool categoryIsHidden;
-    PFGeoPoint *currentLocation;
-    NSArray *dealsRawModel;
-    
+
 }
 
+- (void) setDealsFilteredModel:(NSArray *)dealsFilteredModel {
+    
+    _dealsFilteredModel = dealsFilteredModel;
+    [self.tableView reloadData];
+}
+
+- (void) setDealsRawModel:(NSArray *)dealsRawModel {
+    // Apply Filter
+    NSLog(@"setDealsRawModel");
+
+    _dealsRawModel = dealsRawModel;
+    self.dealsFilteredModel = [self applyFilterOnRawModel: _dealsRawModel];
+}
+
+-(NSMutableArray *) applyFilterOnRawModel: (NSArray *) rawModel {
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    for (PFObject *deal in rawModel) {
+        
+        NSInteger cat = [deal[@"category"] intValue];
+        PFGeoPoint *dealLoc = deal[@"location"];
+        NSLog(@"cat: %ld", (long)cat);
+        if ([[self.categoryFilterArray objectAtIndex:cat] boolValue]) {
+            // * 1000 for km to m conversion
+            if ([dealLoc distanceInKilometersTo: self.currentLocation] * 1000 <= self.proximitySlider.value) {
+                [result addObject: deal];
+            }
+        }
+    }
+    
+    return result;
+}
 
 - (void) configureCategorySelector {
     
@@ -41,7 +75,8 @@
 }
 
 
-- (NSMutableArray *) getCategoryFilterArray {
+- (NSMutableArray *) categoryFilterArray {
+    NSLog(@"getcategoryFilterArray");
     if (_categoryFilterArray == nil) {
         _categoryFilterArray = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULT_CATEGORY_KEY] mutableCopy];
         
@@ -78,7 +113,7 @@
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *myLocation, NSError *error) {
         if (!error) {
             NSLog(@"success");
-            currentLocation = myLocation;
+            self.currentLocation = myLocation;
             
 
             // Create a query for places
@@ -88,15 +123,13 @@
             // Limit what could be a lot of points.
             query.limit = 100;
             // Final list of objects
-            dealsRawModel = [query findObjects];
-            NSLog(@"%@", dealsRawModel);
+            self.dealsRawModel = [query findObjects];
         }
         else { //Error
             NSLog(@"Problem encountered while getting current geolocation");
         }
     }];
   
-    // Let's fetch all deals max 100
     
 }
 
@@ -104,6 +137,7 @@
     
     [super viewDidLoad];
     
+
     [self configureCategorySelector];
     
     [self proximityChanged: self.proximitySlider];
@@ -124,7 +158,7 @@
 
 - (void) onCategoryLabelClick {
     categoryIsHidden ? [self showCategories] : [self hideCategoriesWithAnimation: YES];
-    NSLog(@"%@", dealsRawModel);
+    NSLog(@"%@", self.dealsRawModel);
 }
 
 - (IBAction)proximityChanged:(UISlider *)sender {
@@ -186,16 +220,51 @@
 /* ------------------- Deals TableView Delegate ------------------- */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    // No data yet or no elements in filtered model
+    if (self.dealsFilteredModel == nil || [self.dealsFilteredModel count] == 0)
+        return 1;
+    
+    return [self.dealsFilteredModel count];
 
-    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #define DEAL_CELL_LOADING_REUSE_ID @"DealLoadingCell"
 #define DEAL_CELL_REUSE_ID @"DealCell"
-    DealTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:DEAL_CELL_REUSE_ID forIndexPath:indexPath];
-    cell.mainImageView.image = [UIImage imageNamed:@"tmp"];
+#define DEAL_CELL_NO_RESULT_ID @"DealNoResultCell"
+    DealTableViewCell *cell;
+    
+    // No model yet - Display loading cell
+    if (self.dealsFilteredModel == nil) {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:DEAL_CELL_LOADING_REUSE_ID forIndexPath:indexPath];
+    }
+    // Filtered model has no deals
+    else if ([self.dealsFilteredModel count] == 0) {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:DEAL_CELL_NO_RESULT_ID forIndexPath:indexPath];
+    }
+    // Have something to show..
+    else {
+        PFObject * model = [self.dealsFilteredModel objectAtIndex:indexPath.row];
+        
+        cell = [self.tableView dequeueReusableCellWithIdentifier:DEAL_CELL_REUSE_ID forIndexPath:indexPath];
+        
+        // Set Heading Label
+        cell.dealHeadingLabel.text = model[@"heading"];
+        
+        // Set Distance String Label
+        double distance = [self.currentLocation distanceInKilometersTo:model[@"location"]] * 1000;
+        NSString *distanceString = [NSString stringWithFormat:@"%.f meters from you", distance];
+        cell.dealDistanceLabel.text = distanceString;
+        
+        // Set Image in background
+        cell.mainImageView.file = model[@"mainImage"];
+        [cell.mainImageView loadInBackground];
+        
+        
+    }
+    
     return cell;
 }
 
@@ -213,7 +282,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return [[self getCategoryFilterArray] count];
+    return [self.categoryFilterArray count];
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -259,7 +328,7 @@
     
     cell.label.text = categoryName;
     
-    BOOL selected = [[[self getCategoryFilterArray] objectAtIndex:indexPath.row] boolValue];
+    BOOL selected = [[self.categoryFilterArray objectAtIndex:indexPath.row] boolValue];
     UIImage *checkBoxImg = selected ? [UIImage imageNamed:@"Checkbox_Checked"] : [UIImage imageNamed:@"Checkbox_Unchecked"];
     cell.checkboxImageView.image = checkBoxImg;
     
@@ -271,6 +340,8 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     [self toggleCategoryAtIndex:indexPath.row];
+    NSLog(@"==> %@", self.categoryFilterArray);
+    self.dealsFilteredModel = [self applyFilterOnRawModel: self.dealsRawModel];
 }
 
 
@@ -287,6 +358,6 @@
 */
 
 - (IBAction)onProximitySelect:(id)sender {
-    NSLog(@"selected!!\n");
+    self.dealsFilteredModel = [self applyFilterOnRawModel: self.dealsRawModel];
 }
 @end
