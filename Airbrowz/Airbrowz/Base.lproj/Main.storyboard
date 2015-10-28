@@ -258,7 +258,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5000" minValue="50" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-mz-yF7">
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10000" minValue="50" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-mz-yF7">
                                         <rect key="frame" x="14" y="30" width="130" height="31"/>
                                         <animations/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

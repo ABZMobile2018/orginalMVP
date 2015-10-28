@@ -25,7 +25,8 @@
 @implementation MasterViewController {
     
     bool categoryIsHidden;
-
+    double categoryViewOriginYWhenClosed;
+    double categoryViewOriginYWhenOpened;
 }
 
 - (void) setDealsFilteredModel:(NSArray *)dealsFilteredModel {
@@ -67,9 +68,6 @@
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCategoryLabelClick)];
     [self.categoryLabel addGestureRecognizer:tapGesture];
  
-    
-    [self hideCategoriesWithAnimation: NO];
-
     
     
 }
@@ -150,12 +148,23 @@
     
     [self fetchDeals];
     
-    
-    //self.proximitySlider.transform = CGAffineTransformMakeScale(0.5, 0.5);
-
-   //[[self navigationController] setNavigationBarHidden:YES animated:YES];
-
+    categoryViewOriginYWhenOpened = self.categoryCollectionView.frame.origin.y;
+    categoryViewOriginYWhenClosed = self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height;
 }
+
+
+
+- (void) viewDidLayoutSubviews {
+    CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
+                             self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height,
+                             self.categoryCollectionView.frame.size.width,
+                             self.categoryCollectionView.frame.size.height);
+    
+    self.categoryCollectionView.frame = rect;
+    categoryIsHidden = true;
+}
+
+
 
 - (void) onCategoryLabelClick {
     categoryIsHidden ? [self showCategories] : [self hideCategoriesWithAnimation: YES];
@@ -189,7 +198,7 @@
     [UIView animateWithDuration:0.5f animations:^{
         self.categoryCollectionView.frame =
         CGRectMake(self.categoryCollectionView.frame.origin.x,
-                   self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height,
+                   categoryViewOriginYWhenOpened,
                    self.categoryCollectionView.frame.size.width,
                    self.categoryCollectionView.frame.size.height);
     }];
@@ -200,7 +209,7 @@
     NSLog(@"hide cat");
     
     CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
-                             self.categoryCollectionView.frame.origin.y + self.categoryCollectionView.frame.size.height,
+                             categoryViewOriginYWhenClosed,
                              self.categoryCollectionView.frame.size.width,
                              self.categoryCollectionView.frame.size.height);
     
