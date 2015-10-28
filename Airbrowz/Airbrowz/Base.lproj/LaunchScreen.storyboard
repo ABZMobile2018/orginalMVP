@@ -16,8 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="AirbrowzLogo_Big" translatesAutoresizingMaskIntoConstraints="NO" id="eby-5w-q9n">
+                                <rect key="frame" x="180" y="237" width="250" height="107"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Ar9-H2-8Ed"/>
+                                    <constraint firstAttribute="height" constant="107" id="TGe-E0-fm0"/>
+                                    <constraint firstAttribute="height" constant="125" id="cah-0B-CKR"/>
+                                    <constraint firstAttribute="width" constant="250" id="oXF-yv-T4h"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ar9-H2-8Ed"/>
+                                        <exclude reference="cah-0B-CKR"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eby-5w-q9n" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2XI-4G-For"/>
+                            <constraint firstItem="eby-5w-q9n" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="435-pL-rZP"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,4 +47,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AirbrowzLogo_Big" width="1001" height="300"/>
+    </resources>
 </document>
