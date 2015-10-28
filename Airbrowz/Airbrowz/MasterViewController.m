@@ -124,7 +124,9 @@
             self.dealsRawModel = [query findObjects];
         }
         else { //Error
+            
             NSLog(@"Problem encountered while getting current geolocation");
+            NSLog(@"%@", error);
         }
     }];
   
