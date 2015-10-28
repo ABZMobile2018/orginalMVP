@@ -48,7 +48,7 @@
         
         NSInteger cat = [deal[@"category"] intValue];
         PFGeoPoint *dealLoc = deal[@"location"];
-        NSLog(@"cat: %ld", (long)cat);
+
         if ([[self.categoryFilterArray objectAtIndex:cat] boolValue]) {
             // * 1000 for km to m conversion
             if ([dealLoc distanceInKilometersTo: self.currentLocation] * 1000 <= self.proximitySlider.value) {
@@ -137,6 +137,7 @@
     
     [super viewDidLoad];
     
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"AirbrowzLogo"]];
 
     [self configureCategorySelector];
     
@@ -340,7 +341,7 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     [self toggleCategoryAtIndex:indexPath.row];
-    NSLog(@"==> %@", self.categoryFilterArray);
+
     self.dealsFilteredModel = [self applyFilterOnRawModel: self.dealsRawModel];
 }
 
