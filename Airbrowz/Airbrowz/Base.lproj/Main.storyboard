@@ -128,7 +128,7 @@
                                             <outlet property="mainImageView" destination="pZL-qv-5h9" id="YQW-ct-h7B"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rra-id-Wwf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealNoResultCell" id="Rra-id-Wwf">
                                         <rect key="frame" x="0.0" y="383" width="414" height="291"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rra-id-Wwf" id="XJb-SX-IOe">
