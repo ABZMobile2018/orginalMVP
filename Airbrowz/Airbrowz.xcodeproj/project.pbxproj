@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2178C551BDF5BD3B77B762 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CEAEB145A66F234F3E7E8 /* libPods.a */; };
 		B09B26291BDDE56E0053C595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26281BDDE56E0053C595 /* main.m */; };
 		B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B262B1BDDE56E0053C595 /* AppDelegate.m */; };
 		B09B26321BDDE56E0053C595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09B26301BDDE56E0053C595 /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 		B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B265C1BDDF27C0053C595 /* MasterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B09B266B1BDED02C0053C595 /* CategoryEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B266A1BDED02C0053C595 /* CategoryEntry.m */; settings = {ASSET_TAGS = (); }; };
+		B09BB5421BE02F2E00E02FB3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */; };
+		B09BB5451BE0722D00E02FB3 /* AirbrowzCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2677D31B8F0637ADFB7B794E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		72D07EBCB1B25260B242B8AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B09B26241BDDE56E0053C595 /* Airbrowz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbrowz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09B26281BDDE56E0053C595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B09B262A1BDDE56E0053C595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,6 +63,12 @@
 		B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTableViewCell.m; sourceTree = "<group>"; };
 		B09B26651BDEBF6C0053C595 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		B09B26691BDED02C0053C595 /* CategoryEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryEntry.h; sourceTree = "<group>"; };
+		B09B266A1BDED02C0053C595 /* CategoryEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryEntry.m; sourceTree = "<group>"; };
+		B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B09BB5431BE0722D00E02FB3 /* AirbrowzCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirbrowzCommons.h; sourceTree = "<group>"; };
+		B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirbrowzCommons.m; sourceTree = "<group>"; };
+		F28CEAEB145A66F234F3E7E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09BB5421BE02F2E00E02FB3 /* CoreLocation.framework in Frameworks */,
+				0E2178C551BDF5BD3B77B762 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +98,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0513E20AE4312EC568586ECF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72D07EBCB1B25260B242B8AA /* Pods.debug.xcconfig */,
+				2677D31B8F0637ADFB7B794E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0A5318BD09EA8AB0B09F9D49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */,
+				F28CEAEB145A66F234F3E7E8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B09B261B1BDDE56E0053C595 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +123,8 @@
 				B09B26401BDDE56E0053C595 /* AirbrowzTests */,
 				B09B264B1BDDE56E0053C595 /* AirbrowzUITests */,
 				B09B26251BDDE56E0053C595 /* Products */,
+				0513E20AE4312EC568586ECF /* Pods */,
+				0A5318BD09EA8AB0B09F9D49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +141,7 @@
 		B09B26261BDDE56E0053C595 /* Airbrowz */ = {
 			isa = PBXGroup;
 			children = (
+				B09B26681BDECFAE0053C595 /* Model */,
 				B09B26621BDE0BC90053C595 /* View */,
 				B09B265A1BDDF2350053C595 /* ViewControllers */,
 				B09B262A1BDDE56E0053C595 /* AppDelegate.h */,
@@ -116,6 +151,8 @@
 				B09B26351BDDE56E0053C595 /* LaunchScreen.storyboard */,
 				B09B26381BDDE56E0053C595 /* Info.plist */,
 				B09B26271BDDE56E0053C595 /* Supporting Files */,
+				B09BB5431BE0722D00E02FB3 /* AirbrowzCommons.h */,
+				B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */,
 			);
 			path = Airbrowz;
 			sourceTree = "<group>";
@@ -166,6 +203,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		B09B26681BDECFAE0053C595 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B09B26691BDED02C0053C595 /* CategoryEntry.h */,
+				B09B266A1BDED02C0053C595 /* CategoryEntry.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B09B26511BDDE56E0053C595 /* Build configuration list for PBXNativeTarget "Airbrowz" */;
 			buildPhases = (
+				86D2E0CB925D746A82A5190D /* Check Pods Manifest.lock */,
 				B09B26201BDDE56E0053C595 /* Sources */,
 				B09B26211BDDE56E0053C595 /* Frameworks */,
 				B09B26221BDDE56E0053C595 /* Resources */,
+				90001E65BBA8B1913D0D9420 /* Embed Pods Frameworks */,
+				A67DF6C2A4AF5E387DDB7A2C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +340,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		86D2E0CB925D746A82A5190D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90001E65BBA8B1913D0D9420 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A67DF6C2A4AF5E387DDB7A2C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B09B26201BDDE56E0053C595 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -298,9 +395,11 @@
 			files = (
 				B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */,
 				B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */,
+				B09B266B1BDED02C0053C595 /* CategoryEntry.m in Sources */,
 				B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */,
 				B09B26291BDDE56E0053C595 /* main.m in Sources */,
 				B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */,
+				B09BB5451BE0722D00E02FB3 /* AirbrowzCommons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +536,7 @@
 		};
 		B09B26521BDDE56E0053C595 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72D07EBCB1B25260B242B8AA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Airbrowz/Info.plist;
@@ -449,6 +549,7 @@
 		};
 		B09B26531BDDE56E0053C595 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2677D31B8F0637ADFB7B794E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Airbrowz/Info.plist;
@@ -526,6 +627,7 @@
 				B09B26531BDDE56E0053C595 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B09B26541BDDE56E0053C595 /* Build configuration list for PBXNativeTarget "AirbrowzTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +636,7 @@
 				B09B26561BDDE56E0053C595 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B09B26571BDDE56E0053C595 /* Build configuration list for PBXNativeTarget "AirbrowzUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +645,7 @@
 				B09B26591BDDE56E0053C595 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

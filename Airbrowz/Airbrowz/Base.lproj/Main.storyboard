@@ -44,7 +44,7 @@
             </objects>
             <point key="canvasLocation" x="-410" y="1399"/>
         </scene>
-        <!--Deals-->
+        <!--Airbrowz-->
         <scene sceneID="179-tO-9IN">
             <objects>
                 <viewController id="fpO-zL-s1v" customClass="MasterViewController" sceneMemberID="viewController">
@@ -162,22 +162,22 @@
                                     <outlet property="delegate" destination="fpO-zL-s1v" id="1BE-QT-fwK"/>
                                 </connections>
                             </tableView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ynZ-zP-vba">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ynZ-zP-vba">
                                 <rect key="frame" x="0.0" y="124" width="414" height="199"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18823529410000001" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="BTi-I2-XVA">
-                                    <size key="itemSize" width="127" height="49"/>
+                                    <size key="itemSize" width="114" height="49"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" reuseIdentifier="CategoryCell" id="pOw-QT-QVq" customClass="CategoryCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="127" height="49"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="127" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="114" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Checkbox_Checked" translatesAutoresizingMaskIntoConstraints="NO" id="NAB-yx-gyw">
@@ -185,7 +185,7 @@
                                                     <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health / Fitness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-la-fpu">
-                                                    <rect key="frame" x="36" y="14" width="86" height="21"/>
+                                                    <rect key="frame" x="28" y="14" width="86" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,7 +224,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="1500" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-mz-yF7">
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="50" maxValue="1500" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-mz-yF7">
                                         <rect key="frame" x="14" y="30" width="130" height="31"/>
                                         <animations/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -254,16 +254,18 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ynZ-zP-vba" firstAttribute="centerX" secondItem="HKO-rT-z2c" secondAttribute="centerX" id="8UG-rW-seu"/>
                             <constraint firstItem="DVm-67-p33" firstAttribute="centerX" secondItem="HKO-rT-z2c" secondAttribute="centerX" id="Avv-Hu-uzh"/>
                             <constraint firstItem="NdH-ex-75X" firstAttribute="top" secondItem="9oL-i4-hxN" secondAttribute="bottom" id="E86-rZ-jag"/>
                             <constraint firstItem="DVm-67-p33" firstAttribute="width" secondItem="HKO-rT-z2c" secondAttribute="width" id="NvW-RF-2rY"/>
                             <constraint firstItem="NdH-ex-75X" firstAttribute="width" secondItem="HKO-rT-z2c" secondAttribute="width" id="cvy-ho-woA"/>
+                            <constraint firstItem="ynZ-zP-vba" firstAttribute="width" secondItem="HKO-rT-z2c" secondAttribute="width" id="eyd-9Q-3Wp"/>
                             <constraint firstItem="NdH-ex-75X" firstAttribute="centerX" secondItem="HKO-rT-z2c" secondAttribute="centerX" id="rJW-u9-t2S"/>
                             <constraint firstItem="J2D-EH-K2m" firstAttribute="top" secondItem="DVm-67-p33" secondAttribute="bottom" id="rf3-9m-XIY"/>
                             <constraint firstItem="DVm-67-p33" firstAttribute="top" secondItem="NdH-ex-75X" secondAttribute="bottom" id="tZA-rR-PJm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Deals" id="scI-a4-cb8"/>
+                    <navigationItem key="navigationItem" title="Airbrowz" id="scI-a4-cb8"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="ynZ-zP-vba" id="iIz-S9-7IU"/>
