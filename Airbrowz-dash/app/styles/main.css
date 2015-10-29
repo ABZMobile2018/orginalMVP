@@ -1,5 +1,11 @@
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
 body {
-    background: #fafafa;
+  background: #FFFFFF;
 }
 
 .landing {
@@ -52,16 +58,22 @@ body {
   color:white;
 }
 
-.login-form input {
-  border-bottom : 1px solid #FFFFFF;
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+textarea {
+  border : 1px solid #FFFFFF;
   margin: 11px 0 10px;
-  padding: 6px 0 5px;
-  background: 0 0;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  padding: 6px 6px;
+  background: white;
+  color:black;
 }
 
 .login-form input:focus {
-  border-bottom: 1px solid transparent; 
+  border: 1px solid transparent; 
 }
+
+img {
+  width:100%;
+}
+

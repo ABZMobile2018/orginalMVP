@@ -16,6 +16,7 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -25,19 +26,12 @@
         <!-- <div class="landing-background-merchant"></div>
         <div class="landing-background-restaurant"></div> -->
 
-        <div class="landing">
-            <div class="login-form">
-                <h1>Welcome to Airbrowz</h1>
-                <p>Merchant login</p>
-
-                <form>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <button class="btn-wire-green" id=""/>Submit</button>
-                </form>
+        <div class="row" style="padding-top:12px;">
+            <div class="col-md-2 col-md-offset-5">
+                <img src="images/airbrowz-logo.png">
             </div>
         </div>
-        
+        <div id="main"></div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -50,16 +44,23 @@
         </script>
 
         <script src="https://cdn.kiwi.ai/scriptedstyles.min.js"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/oj.mustache/0.7.2/oj.mustache.min.js"></script>
         <!-- build:js scripts/vendor.js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
         <!-- endbuild -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/templates.js"></script>
+        <script src="scripts/models/User.js"></script>
+        <script src="scripts/views/Landing.js"></script>
+        <script src="scripts/routes/Routes.js"></script>
+        <script src="scripts/views/Signup.js"></script>
+        <script src="scripts/views/Dashboard.js"></script>
         <!-- endbuild -->
 </body>
 </html>
