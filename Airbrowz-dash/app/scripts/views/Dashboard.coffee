@@ -23,7 +23,18 @@ class Dash.Views.Dashboard extends Backbone.View
           return deal.toJSON()
         @render()
 
+        # below code sucks
+        # _.map @collection, (deal)=>
+        #   latlng = "#{ deal.location.latitude },#{ deal.location.longitude }"
+          
+        #   $.post "http://maps.googleapis.com/maps/api/geocode/json?latlng=#{ latlng }", (ret)=>
+        #     deal.address = ret.results[0].formatted_address
+        #     @render()
+
   render: () ->
-    console.log @collection
     output = Mustache.render @template(), { deals : @collection }
     @$el.html output
+    
+    _.map $('.time'), (ele)->
+      time = $(ele).html()
+      $(ele).html moment(time).fromNow()
