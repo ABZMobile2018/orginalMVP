@@ -19,7 +19,11 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
+<<<<<<< HEAD
 	<string>2</string>
+=======
+	<string>4</string>
+>>>>>>> d91baf24ffb401a9e4b2685816674d62cfe29cad
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>

@@ -15,11 +15,11 @@
 		B09B26371BDDE56E0053C595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09B26351BDDE56E0053C595 /* LaunchScreen.storyboard */; };
 		B09B26421BDDE56E0053C595 /* AirbrowzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26411BDDE56E0053C595 /* AirbrowzTests.m */; };
 		B09B264D1BDDE56E0053C595 /* AirbrowzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B264C1BDDE56E0053C595 /* AirbrowzUITests.m */; };
-		B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B265C1BDDF27C0053C595 /* MasterViewController.m */; settings = {ASSET_TAGS = (); }; };
-		B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B265C1BDDF27C0053C595 /* MasterViewController.m */; };
+		B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */; };
+		B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */; };
 		B09BB5421BE02F2E00E02FB3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */; };
-		B09BB5451BE0722D00E02FB3 /* AirbrowzCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */; settings = {ASSET_TAGS = (); }; };
+		B09BB5451BE0722D00E02FB3 /* AirbrowzCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -536,7 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Airbrowz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ai.kiwi.airbrowz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,7 +550,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Airbrowz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ai.kiwi.airbrowz;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,81 @@
+<div style="height:15vh;"></div>
+<div class="container" style="height:100vh;">
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Description</label>
+      <div class="col-sm-10">
+        <textarea id="description" rows="3" style="width:100%;"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Category</label>
+      <div class="col-sm-10">
+        <select id="category">
+          <option>-- Select --</option>
+          <option value="0">Fashion</option>
+          <option value="1">Food</option>
+          <option value="2">Electronics</option>
+          <option value="3">Entertainment</option>
+          <option value="4">Health/Fitness</option>
+          <option value="5">Service</option>
+          <option value="6">Lifestyle</option>
+          <option value="7">Furniture</option>
+          <option value="8">Misc</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Address</label>
+
+      <div class="col-sm-10">
+        <div class="row">
+          <div class="col-sm-2">
+            <input id="street_number" type="text" class="form-control" placeholder="Street #" />
+          </div>
+          <div class="col-sm-8">
+            <input id="street_name" type="text" class="form-control" placeholder="Street Name" />
+          </div>
+          <div class="col-sm-2">
+            <input id="postal_code" type="text" class="form-control" placeholder="Postal Code" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8">
+            <input id="city" type="text" class="form-control" placeholder="City" />
+          </div>
+          <div class="col-sm-4">
+            <input id="province" type="text" class="form-control" placeholder="Province" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-1 col-sm-offset-11">
+        <button id="register" type="submit" class="btn btn-info">Register</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+- capacity to upload profile of business including Tags
+- upload deals and information
+- upload photos and video for deals
+- set distance trigger for information to be sent
