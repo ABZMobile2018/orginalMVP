@@ -15,5 +15,3 @@ window.Dash =
 $ ->
   'use strict'
   Dash.init();
-  
-

@@ -4,6 +4,10 @@
           border-radius: 0 !important;
 }
 
+html {
+  background-color: #FFFFFF !important;
+}
+
 body {
   background: #FFFFFF;
 }

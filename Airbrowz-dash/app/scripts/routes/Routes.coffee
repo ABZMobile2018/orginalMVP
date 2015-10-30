@@ -6,6 +6,7 @@ class Dash.Routers.Routes extends Backbone.Router
     ""          : "landing"
     "signup"    : "signup"
     "dashboard" : "dashboard"
+    "newDeal"   : "newDeal"
     "logout"    : "logout"
 
 
@@ -26,6 +27,10 @@ class Dash.Routers.Routes extends Backbone.Router
   signup :->
     console.log 'signup'
     new Dash.Views.Signup( el:$('#main')[0] )
+
+  newDeal :->
+    console.log 'new deal'
+    new Dash.Views.NewDeal( el:$('#main')[0] )
 
   logout :->
     Parse.User.logOut()
