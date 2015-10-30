@@ -6,7 +6,7 @@ class Dash.Views.Dashboard extends Backbone.View
 
   tagName: 'div'
 
-  id: ''
+  id: 'main'
 
   className: ''
 
@@ -32,9 +32,15 @@ class Dash.Views.Dashboard extends Backbone.View
         #     @render()
 
   render: () ->
-    output = Mustache.render @template(), { deals : @collection }
+    output = Mustache.render @template(), { user : @user.toJSON() ,deals : @collection }
     @$el.html output
     
     _.map $('.time'), (ele)->
       time = $(ele).html()
       $(ele).html moment(time).fromNow()
+
+    _.map $('.viwedBy'), (ele)->
+      time = $(ele).attr('data-created-at')
+      numbViewed = (new Date()).getTime() - (new Date(time)).getTime()
+      numbViewed = numbViewed/10000
+      $(ele).html parseInt(numbViewed)

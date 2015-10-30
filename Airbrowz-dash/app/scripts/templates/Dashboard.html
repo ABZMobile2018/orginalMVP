@@ -1,8 +1,22 @@
 <div class="container">
 
+  {{#user}}
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <h4><u>Logged In As</u></h4>
+      <p>Email: {{email}}</p> 
+      <p>Profile: {{description}}</p>
+      <p>Address: {{street_number}} {{street_name}} {{city}} {{province}} {{postal_code}}</p>
+    </div>
+  </div>
+  {{/user}}
+
+  <hr>
+
   <div class="row">
     <div class="col-md-2">
-      <button class="btn btn-info">+ Add A New Deal</button>
+      <p>123 People Near By</p>
+      <a class="btn btn-info" href="#newDeal">+ Add A New Deal</a>
     </div>
     <div class="col-md-1 col-md-offset-9">
       <a href="#logout">Logout</a>
@@ -18,10 +32,12 @@
       </div>
       <div class="col-md-5">
         <h1>Deal Details</h1>
-        <p>{{heading}}</p>
+        <h2>{{heading}}</h2>
         <p>Created <span class="time">{{createdAt}}</span></p>
+        <p>Viewed by <span class="viwedBy" data-created-at="{{createdAt}}">287</span> people</p>
         <!-- <p>Address : <span class="address">{{address}}</span></p> -->
       </div>
     </div>
+    <div style="height:5vh;"></div>
   {{/deals}}
 </div>

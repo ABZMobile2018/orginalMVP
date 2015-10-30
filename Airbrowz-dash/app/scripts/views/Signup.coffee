@@ -6,7 +6,7 @@ class Dash.Views.Signup extends Backbone.View
 
   tagName: 'div'
 
-  id: ''
+  id: 'main'
 
   className: ''
 
@@ -40,7 +40,7 @@ class Dash.Views.Signup extends Backbone.View
     user.set 'postal_code', postal_code
     user.set 'city', city
     user.set 'province', province
-    user.set 'category', category
+
 
     user.signUp null,
       success: (user) ->
