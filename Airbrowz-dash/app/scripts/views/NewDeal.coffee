@@ -24,6 +24,10 @@ class Dash.Views.NewDeal extends Backbone.View
 
   create : (e)->
     e.preventDefault()
+
+    $("#create").html('submitting...').prop('disabled', true)
+
+
     heading = $('#heading').val()
     fileUploadControl = $('#dealImage')[0]
     if fileUploadControl.files.length > 0
@@ -42,6 +46,8 @@ class Dash.Views.NewDeal extends Backbone.View
     deal.set 'youtube', youtube
     deal.set 'category', category
 
+
+
     # Get longitude and latitude
     postal_code = Parse.User.current().get('postal_code')
     query_uri = "http://maps.googleapis.com/maps/api/geocode/json?address=#{ postal_code }"
@@ -59,6 +65,7 @@ class Dash.Views.NewDeal extends Backbone.View
           console.log 'saved'
           window.location.href="#dashboard"
         error :(error)->
+          $("#create").html('Create').prop('disabled', false)
           console.error error
           alert 'error'
       }
