@@ -74,7 +74,7 @@
 
 
 - (NSMutableArray *) categoryFilterArray {
-    NSLog(@"getcategoryFilterArray");
+
     if (_categoryFilterArray == nil) {
         _categoryFilterArray = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULT_CATEGORY_KEY] mutableCopy];
         
@@ -121,7 +121,21 @@
             // Limit what could be a lot of points.
             query.limit = 100;
             // Final list of objects
-            self.dealsRawModel = [query findObjects];
+            
+            [query findObjectsInBackgroundWithBlock:^(NSArray *deals, NSError *error) {
+                if (!error) {
+                    // The find succeeded.
+                    self.dealsRawModel = deals;
+                    
+                    
+                } else {
+                    // Log details of the failure
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
+
+            
+            
         }
         else { //Error
             
@@ -152,6 +166,14 @@
     
     categoryViewOriginYWhenOpened = self.categoryCollectionView.frame.origin.y;
     categoryViewOriginYWhenClosed = self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height;
+
+    // Update deals every 20 secs..  TODO: this can be optimized... web request every 5s is too much..
+    [NSTimer scheduledTimerWithTimeInterval: 5.0
+                                             target: self
+                                           selector: @selector(fetchDeals)
+                                           userInfo: nil
+                                            repeats: YES];
+
 }
 
 
@@ -271,6 +293,7 @@
         cell.dealDistanceLabel.text = distanceString;
         
         // Set Image in background
+        cell.mainImageView.image = [UIImage imageNamed:@"dealImagePlaceholder"];
         cell.mainImageView.file = model[@"mainImage"];
         [cell.mainImageView loadInBackground];
         
