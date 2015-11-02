@@ -25,8 +25,6 @@ class Dash.Views.NewDeal extends Backbone.View
   create : (e)->
     e.preventDefault()
 
-    $("#create").html('submitting...').prop('disabled', true)
-
     heading = $('#heading').val()
     fileUploadControl = $('#dealImage')[0]
     if fileUploadControl.files.length > 0
@@ -36,9 +34,9 @@ class Dash.Views.NewDeal extends Backbone.View
 
     youtube = $('#youtube').val().trim()
     category = parseInt($('#category').val())
-    push_now = $('#push_now').val().trim()
 
-    unless heading and mainImage and category
+    unless (heading and mainImage and category >= 0)
+      console.log heading, mainImage, category
       return alert 'Please make sure that Heading, Image, and Category are sections are set'
 
     Deals = Parse.Object.extend("Deals");
@@ -47,6 +45,8 @@ class Dash.Views.NewDeal extends Backbone.View
     deal.set 'mainImage', mainImage
     deal.set 'youtube_video_id', @getYoutubeIdFromURI(youtube)
     deal.set 'category', category
+
+    $("#create").html('submitting...').prop('disabled', true)
 
     # Get longitude and latitude
     postal_code = Parse.User.current().get('postal_code')
@@ -64,9 +64,13 @@ class Dash.Views.NewDeal extends Backbone.View
         success : ()->
           console.log 'saved'
 
+          msg = heading
+          if Parse.User.current().get('company_name')
+            company_name = Parse.User.current().get('company_name')
+            msg = "#{ heading } from #{ company_name }"
           Parse.Push.send {
             channels : ['global']
-            data: alert: heading
+            data: alert: msg
           },
             success: ->
               return console.log 'Push was successful'
