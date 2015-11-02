@@ -6,7 +6,7 @@
 ## Push Notifications
 Example: Following curl will send push notification to every users
 
-`
+```
 curl -X POST \
   -H "X-Parse-Application-Id: D7VKvOCpa2Pnt8lr3dvynhVQxoDW6AgiXVsyQuB1" \
   -H "X-Parse-REST-API-Key: ieH2cz8myRcudIyt2eoMIRq2orA2MqEtC4SaytF8" \
@@ -20,6 +20,6 @@ curl -X POST \
         }
       }' \
   https://api.parse.com/1/push
-`
+```
 
 For detailed information please consult with [Parse-Push Notifications](https://parse.com/docs/rest/guide#push-notifications)
