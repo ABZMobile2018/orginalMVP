@@ -128,9 +128,7 @@
     
     DealDetailGmapTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellReuseIdentifierForIndexPath:indexPath] forIndexPath:indexPath];
     
-    
-    // Create a GMSCameraPosition that tells the map to display the
-    // coordinate -33.86,151.20 at zoom level 6.
+    [cell.mapPlaceholder clear];
     GMSCameraPosition *camera = [GMSCameraPosition
                                  cameraWithLatitude:((PFGeoPoint *)self.model[@"location"]).latitude
                                  longitude:((PFGeoPoint *)self.model[@"location"]).longitude
