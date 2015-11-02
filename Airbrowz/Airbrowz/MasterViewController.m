@@ -10,6 +10,7 @@
 #import "DealTableViewCell.h"
 #import "CategoryCollectionViewCell.h"
 #import "AirbrowzCommons.h"
+#import "DealDetailTableViewController.h"
 #import <Parse/Parse.h>
 
 @interface MasterViewController () <UITableViewDelegate, UICollectionViewDelegate>
@@ -18,6 +19,7 @@
 @property (strong, nonatomic)  NSArray *dealsRawModel;
 @property (strong, nonatomic) NSArray *dealsFilteredModel;
 @property PFGeoPoint *currentLocation;
+@property DealDetailTableViewController *detailViewController;
 @end
 
 
@@ -37,7 +39,7 @@
 
 - (void) setDealsRawModel:(NSArray *)dealsRawModel {
     // Apply Filter
-    NSLog(@"setDealsRawModel");
+ 
 
     _dealsRawModel = dealsRawModel;
     self.dealsFilteredModel = [self applyFilterOnRawModel: _dealsRawModel];
@@ -106,11 +108,10 @@
 
 - (void) fetchDeals {
     
-    NSLog(@"fetching deals");
+    //NSLog(@"fetching deals");
     // First find my location
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *myLocation, NSError *error) {
         if (!error) {
-            NSLog(@"success");
             self.currentLocation = myLocation;
             
 
@@ -118,15 +119,18 @@
             PFQuery *query = [PFQuery queryWithClassName:@"Deals"];
             // Interested in locations near user.
             [query whereKey:@"location" nearGeoPoint:myLocation];
+            // Include User object
+            [query includeKey:@"owner"];
             // Limit what could be a lot of points.
             query.limit = 100;
-            // Final list of objects
             
+            // Final list of objects
+          
             [query findObjectsInBackgroundWithBlock:^(NSArray *deals, NSError *error) {
                 if (!error) {
                     // The find succeeded.
                     self.dealsRawModel = deals;
-                    
+                   
                     
                 } else {
                     // Log details of the failure
@@ -192,7 +196,7 @@
 
 - (void) onCategoryLabelClick {
     categoryIsHidden ? [self showCategories] : [self hideCategoriesWithAnimation: YES];
-    NSLog(@"%@", self.dealsRawModel);
+   
 }
 
 - (IBAction)proximityChanged:(UISlider *)sender {
@@ -205,7 +209,7 @@
         distanceString = [NSString stringWithFormat:@"%.f m", sender.value];
     }
     self.proximityRangeLabel.text = distanceString;
-    NSLog(@"slider value = %f", sender.value);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -218,7 +222,7 @@
 
 - (void) showCategories {
     categoryIsHidden = false;
-    NSLog(@"show cat");
+  
     [UIView animateWithDuration:0.5f animations:^{
         self.categoryCollectionView.frame =
         CGRectMake(self.categoryCollectionView.frame.origin.x,
@@ -230,7 +234,7 @@
 
 - (void) hideCategoriesWithAnimation: (BOOL) animated {
     categoryIsHidden = true;
-    NSLog(@"hide cat");
+
     
     CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
                              categoryViewOriginYWhenClosed,
@@ -243,7 +247,7 @@
         }];
     }
     else {
-        NSLog(@"hiding without anim");
+     
         self.categoryCollectionView.frame = rect;
     }
 
@@ -306,12 +310,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.detailViewController == nil) {
+        self.detailViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"detailView"];
+    }
+    if (self.detailViewController) {
+        PFObject *dealDetail = [self.dealsFilteredModel objectAtIndex:indexPath.row];
+        self.detailViewController.model = dealDetail;
+        
+        [self.detailViewController.tableView reloadData];
+        // Push the view controller.
+        [self.navigationController pushViewController:self.detailViewController animated:YES];
+        self.detailViewController.title = dealDetail[@"owner"][@"company_name"];
+        
+        
+        self.detailViewController.moreDealsModel =
+        [self moreDealsFromOwner:[dealDetail[@"owner"] objectId] except: [dealDetail objectId]];
+    }
     
-    NSLog(@"selected");
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
+-(NSArray *) moreDealsFromOwner:(NSString *) ownerId except:(NSString*) exceptObjectId {
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    
+    for (PFObject *deal in self.dealsFilteredModel) {
+        if ([[deal[@"owner"] objectId] isEqualToString: ownerId]) {
+
+            if (![[deal objectId] isEqualToString:exceptObjectId]) {
+                [result addObject:deal];
+            }
+        }
+    }
+    
+    return result;
+}
 
 /* ------------------- Categories CollectionView Delegate------------------- */
 

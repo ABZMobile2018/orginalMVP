@@ -1,18 +1,24 @@
 PODS:
   - Bolts/Tasks (1.4.0)
+  - GoogleMaps (1.10.5)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - ParseUI (1.1.6):
     - Bolts/Tasks (~> 1.2)
     - Parse (~> 1.8)
+  - youtube-ios-player-helper (0.1.4)
 
 DEPENDENCIES:
+  - GoogleMaps
   - Parse
   - ParseUI
+  - youtube-ios-player-helper (~> 0.1.4)
 
 SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   ParseUI: 8a22e448c03f825203d8c379c80523517f68baa3
+  youtube-ios-player-helper: 84b1485ebb4b7c6b619c6e05edcb55186723a7c6
 
 COCOAPODS: 0.39.0

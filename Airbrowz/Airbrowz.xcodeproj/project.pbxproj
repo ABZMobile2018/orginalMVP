@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0E2178C551BDF5BD3B77B762 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CEAEB145A66F234F3E7E8 /* libPods.a */; };
+		B05196EE1BE5E8E3000E8CEA /* DealDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B05196ED1BE5E8E3000E8CEA /* DealDetailTableViewController.m */; };
+		B05196F11BE5F76D000E8CEA /* DealDetailGmapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05196F01BE5F76D000E8CEA /* DealDetailGmapTableViewCell.m */; };
+		B05196F41BE608F2000E8CEA /* DealDetailCompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05196F31BE608F2000E8CEA /* DealDetailCompanyTableViewCell.m */; };
+		B05196FA1BE60CB6000E8CEA /* DealDetailDealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05196F91BE60CB6000E8CEA /* DealDetailDealTableViewCell.m */; };
+		B05196FE1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05196FD1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.m */; };
+		B05197011BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05197001BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.m */; };
 		B09B26291BDDE56E0053C595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26281BDDE56E0053C595 /* main.m */; };
 		B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B262B1BDDE56E0053C595 /* AppDelegate.m */; };
 		B09B26321BDDE56E0053C595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09B26301BDDE56E0053C595 /* Main.storyboard */; };
@@ -42,6 +48,18 @@
 /* Begin PBXFileReference section */
 		2677D31B8F0637ADFB7B794E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		72D07EBCB1B25260B242B8AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B05196EC1BE5E8E3000E8CEA /* DealDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailTableViewController.h; sourceTree = "<group>"; };
+		B05196ED1BE5E8E3000E8CEA /* DealDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailTableViewController.m; sourceTree = "<group>"; };
+		B05196EF1BE5F76D000E8CEA /* DealDetailGmapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailGmapTableViewCell.h; sourceTree = "<group>"; };
+		B05196F01BE5F76D000E8CEA /* DealDetailGmapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailGmapTableViewCell.m; sourceTree = "<group>"; };
+		B05196F21BE608F2000E8CEA /* DealDetailCompanyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailCompanyTableViewCell.h; sourceTree = "<group>"; };
+		B05196F31BE608F2000E8CEA /* DealDetailCompanyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailCompanyTableViewCell.m; sourceTree = "<group>"; };
+		B05196F81BE60CB6000E8CEA /* DealDetailDealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailDealTableViewCell.h; sourceTree = "<group>"; };
+		B05196F91BE60CB6000E8CEA /* DealDetailDealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailDealTableViewCell.m; sourceTree = "<group>"; };
+		B05196FC1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailYoutubeTableViewCell.h; sourceTree = "<group>"; };
+		B05196FD1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailYoutubeTableViewCell.m; sourceTree = "<group>"; };
+		B05196FF1BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailMoreDealsHeadingTableViewCell.h; sourceTree = "<group>"; };
+		B05197001BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailMoreDealsHeadingTableViewCell.m; sourceTree = "<group>"; };
 		B09B26241BDDE56E0053C595 /* Airbrowz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbrowz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09B26281BDDE56E0053C595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B09B262A1BDDE56E0053C595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -185,6 +203,8 @@
 			children = (
 				B09B265B1BDDF27C0053C595 /* MasterViewController.h */,
 				B09B265C1BDDF27C0053C595 /* MasterViewController.m */,
+				B05196EC1BE5E8E3000E8CEA /* DealDetailTableViewController.h */,
+				B05196ED1BE5E8E3000E8CEA /* DealDetailTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +216,16 @@
 				B09B26601BDE0BBF0053C595 /* DealTableViewCell.m */,
 				B09B26651BDEBF6C0053C595 /* CategoryCollectionViewCell.h */,
 				B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */,
+				B05196EF1BE5F76D000E8CEA /* DealDetailGmapTableViewCell.h */,
+				B05196F01BE5F76D000E8CEA /* DealDetailGmapTableViewCell.m */,
+				B05196F21BE608F2000E8CEA /* DealDetailCompanyTableViewCell.h */,
+				B05196F31BE608F2000E8CEA /* DealDetailCompanyTableViewCell.m */,
+				B05196F81BE60CB6000E8CEA /* DealDetailDealTableViewCell.h */,
+				B05196F91BE60CB6000E8CEA /* DealDetailDealTableViewCell.m */,
+				B05196FC1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.h */,
+				B05196FD1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.m */,
+				B05196FF1BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.h */,
+				B05197001BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -390,8 +420,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */,
+				B05196F41BE608F2000E8CEA /* DealDetailCompanyTableViewCell.m in Sources */,
+				B05196F11BE5F76D000E8CEA /* DealDetailGmapTableViewCell.m in Sources */,
 				B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */,
+				B05197011BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.m in Sources */,
 				B09B265D1BDDF27C0053C595 /* MasterViewController.m in Sources */,
+				B05196FE1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.m in Sources */,
+				B05196EE1BE5E8E3000E8CEA /* DealDetailTableViewController.m in Sources */,
+				B05196FA1BE60CB6000E8CEA /* DealDetailDealTableViewCell.m in Sources */,
 				B09B26291BDDE56E0053C595 /* main.m in Sources */,
 				B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */,
 				B09BB5451BE0722D00E02FB3 /* AirbrowzCommons.m in Sources */,
@@ -535,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Airbrowz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -549,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Airbrowz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+@import GoogleMaps;
+
 @interface AppDelegate ()
 
 @end
@@ -27,6 +29,9 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFImageView class];
     
+    // Google Maps
+    [GMSServices provideAPIKey:@"AIzaSyA2RHhEHeLT0uTGK7LucmerLKLGzW_cFgE"];
+    
     // Setup for APNS
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
@@ -35,6 +40,8 @@
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
+    
+    
     
     return YES;
 }
