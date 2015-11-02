@@ -35,6 +35,7 @@
     // Preconfigure youtubeCell
     NSIndexPath *ytcellIP = [NSIndexPath indexPathForRow:Cell_YoutubeVideo inSection:0];
     [self dequeueAndConfigureCellForYoutube:ytcellIP];
+    [self.tableView setContentOffset:CGPointZero animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
