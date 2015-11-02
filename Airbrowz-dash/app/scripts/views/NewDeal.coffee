@@ -46,8 +46,6 @@ class Dash.Views.NewDeal extends Backbone.View
     deal.set 'youtube', youtube
     deal.set 'category', category
 
-
-
     # Get longitude and latitude
     postal_code = Parse.User.current().get('postal_code')
     query_uri = "http://maps.googleapis.com/maps/api/geocode/json?address=#{ postal_code }"
