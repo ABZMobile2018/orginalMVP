@@ -387,14 +387,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZo-mU-j2o">
-                                            <rect key="frame" x="116" y="8" width="290" height="28"/>
+                                            <rect key="frame" x="116" y="8" width="290" height="22"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Company Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-kH-JJY">
-                                            <rect key="frame" x="116" y="44" width="290" height="59.5"/>
+                                            <rect key="frame" x="116" y="32" width="290" height="59.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -408,18 +408,32 @@
                                                 <constraint firstAttribute="height" constant="100" id="k9g-to-ewe"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ci9-5Q-I3N">
+                                            <rect key="frame" x="116" y="76" width="290" height="30"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                            <state key="normal" title="Open in Google Maps"/>
+                                            <connections>
+                                                <action selector="onGoogleMapsButtonClick:" destination="Otm-NC-4HX" eventType="touchUpInside" id="ekB-vl-xn7"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
+                                        <constraint firstItem="Ci9-5Q-I3N" firstAttribute="leading" secondItem="Jkg-kH-JJY" secondAttribute="leading" id="1ui-YH-eEG"/>
+                                        <constraint firstItem="Jkg-kH-JJY" firstAttribute="top" secondItem="ZZo-mU-j2o" secondAttribute="bottom" constant="5" id="C7D-te-4sa"/>
+                                        <constraint firstItem="Ci9-5Q-I3N" firstAttribute="top" secondItem="Jkg-kH-JJY" secondAttribute="bottom" constant="5" id="EsJ-Sz-gtq"/>
                                         <constraint firstItem="Jkg-kH-JJY" firstAttribute="top" secondItem="ZZo-mU-j2o" secondAttribute="bottom" constant="8" id="HuC-QJ-i4Q"/>
                                         <constraint firstItem="Tlv-Kj-eBz" firstAttribute="top" secondItem="Ol5-1H-Cgw" secondAttribute="topMargin" constant="10" id="IxH-Wn-4nU"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Jkg-kH-JJY" secondAttribute="trailing" id="Mrb-YI-8HE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Jkg-kH-JJY" secondAttribute="trailing" constant="10" id="Mrb-YI-8HE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ci9-5Q-I3N" secondAttribute="trailing" constant="10" id="Nnm-Cl-LMG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ci9-5Q-I3N" secondAttribute="bottom" constant="5" id="OIv-Ih-E3p"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Tlv-Kj-eBz" secondAttribute="bottom" constant="10" id="SHa-hD-8oN"/>
                                         <constraint firstItem="ZZo-mU-j2o" firstAttribute="leading" secondItem="Tlv-Kj-eBz" secondAttribute="trailing" constant="10" id="baE-bf-r5F"/>
                                         <constraint firstItem="Jkg-kH-JJY" firstAttribute="leading" secondItem="Tlv-Kj-eBz" secondAttribute="trailing" constant="10" id="h4h-Dj-Kqt"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ZZo-mU-j2o" secondAttribute="trailing" constant="10" id="hJF-Xr-vuc"/>
-                                        <constraint firstAttribute="topMargin" secondItem="ZZo-mU-j2o" secondAttribute="top" constant="-20" id="l60-Lf-I6Z"/>
+                                        <constraint firstAttribute="topMargin" secondItem="ZZo-mU-j2o" secondAttribute="top" constant="-10" id="l60-Lf-I6Z"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="Tlv-Kj-eBz" secondAttribute="leading" constant="-10" id="wed-AS-Drp"/>
                                         <constraint firstItem="Tlv-Kj-eBz" firstAttribute="centerY" secondItem="Ol5-1H-Cgw" secondAttribute="centerY" id="wmO-ka-8Z1"/>
                                     </constraints>
@@ -427,6 +441,7 @@
                                         <mask key="constraints">
                                             <exclude reference="IxH-Wn-4nU"/>
                                             <exclude reference="SHa-hD-8oN"/>
+                                            <exclude reference="HuC-QJ-i4Q"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

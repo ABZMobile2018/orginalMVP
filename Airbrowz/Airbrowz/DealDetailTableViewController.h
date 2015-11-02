@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 @interface DealDetailTableViewController : UITableViewController
 
+- (IBAction)onGoogleMapsButtonClick:(id)sender;
 
 typedef enum {
     Cell_CompanyDetails,

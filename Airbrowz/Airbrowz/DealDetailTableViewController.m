@@ -212,6 +212,30 @@
     }
 }
 
+
+- (IBAction)onGoogleMapsButtonClick:(id)sender {
+    
+    NSString *query = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%@+%@+%@+%@",
+                       self.model[@"owner"][@"street_number"],
+                       self.model[@"owner"][@"street_name"],
+                       self.model[@"owner"][@"city"],
+                       self.model[@"owner"][@"postal_code"]
+                       ];
+    query = [query stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:query]];
+    
+    /* Apparently there's no way to set marker when using googlemap through sharedApplication according to GoogleMaps URL scheme
+    if ([[UIApplication sharedApplication] canOpenURL:
+         [NSURL URLWithString:@"comgooglemaps://"]]) {
+        
+        //NSString *query = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%f,%f", [self.model[@"location"] latitude], [self.model[@"location" ]longitude]];
+
+    } else {
+        NSLog(@"Can't use comgooglemaps://");
+    }*/
+
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
