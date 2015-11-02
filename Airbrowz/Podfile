@@ -1,2 +1,8 @@
 pod 'Parse'
 pod 'ParseUI'
+
+
+platform :ios, '8.0'
+pod 'GoogleMaps'
+
+pod "youtube-ios-player-helper", "~> 0.1.4"

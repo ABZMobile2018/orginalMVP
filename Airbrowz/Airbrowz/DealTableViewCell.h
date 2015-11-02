@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *dealHeadingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dealDistanceLabel;
 
+
+
 @end
