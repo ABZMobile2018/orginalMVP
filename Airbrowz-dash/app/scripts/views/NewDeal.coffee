@@ -8,10 +8,6 @@ class Dash.Views.NewDeal extends Backbone.View
 
   id: 'main'
 
-  className: ''
-
-  mainImage:null
-
   events: {
     'click #create'    : 'create'
   }
@@ -22,11 +18,14 @@ class Dash.Views.NewDeal extends Backbone.View
   render: () ->
     @$el.html @template()
 
+  getYoutubeIdFromURI: (uri) ->
+    match = RegExp('[?&]v=([^&]*)').exec(uri)
+    match and decodeURIComponent(match[1].replace(/\+/g, ' '))
+
   create : (e)->
     e.preventDefault()
 
     $("#create").html('submitting...').prop('disabled', true)
-
 
     heading = $('#heading').val()
     fileUploadControl = $('#dealImage')[0]
@@ -35,15 +34,18 @@ class Dash.Views.NewDeal extends Backbone.View
       name = 'photo.jpg'
       mainImage = new (Parse.File)(name, file)
 
-    youtube = $('#youtube').val()
+    youtube = $('#youtube').val().trim()
     category = parseInt($('#category').val())
-    push_now = $('#push_now').val()
+    push_now = $('#push_now').val().trim()
+
+    unless heading and mainImage and category
+      return alert 'Please make sure that Heading, Image, and Category are sections are set'
 
     Deals = Parse.Object.extend("Deals");
     deal = new Deals()
     deal.set 'heading', heading
     deal.set 'mainImage', mainImage
-    deal.set 'youtube', youtube
+    deal.set 'youtube_video_id', @getYoutubeIdFromURI(youtube)
     deal.set 'category', category
 
     # Get longitude and latitude
@@ -61,7 +63,18 @@ class Dash.Views.NewDeal extends Backbone.View
       deal.save null, {
         success : ()->
           console.log 'saved'
+
+          Parse.Push.send {
+            channels : ['global']
+            data: alert: heading
+          },
+            success: ->
+              return console.log 'Push was successful'
+            error: (error) ->
+              return console.error error
+          
           window.location.href="#dashboard"
+          
         error :(error)->
           $("#create").html('Create').prop('disabled', false)
           console.error error

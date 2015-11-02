@@ -2,11 +2,14 @@
 
   {{#user}}
   <div class="row">
-    <div class="col-md-12 text-right">
-      <h4><u>Logged In As</u></h4>
-      <p>Email: {{email}}</p> 
-      <p>Profile: {{description}}</p>
-      <p>Address: {{street_number}} {{street_name}} {{city}} {{province}} {{postal_code}}</p>
+    <div class="col-md-6">
+      <img src="{{company_logo.url}}" style="width:100px;">
+    </div>
+    <div class="col-md-6 text-right">
+      <p><strong>Email:</strong> {{email}}</p> 
+      <p><strong>Profile:</strong> {{description}}</p>
+      <p><strong>Address:</strong> {{street_number}} {{street_name}} {{city}} {{province}} {{postal_code}}</p>
+      <p><u><a href="#logout">Logout</a></u></p>
     </div>
   </div>
   {{/user}}
@@ -14,12 +17,9 @@
   <hr>
 
   <div class="row">
-    <div class="col-md-2">
-      <p>123 People Near By</p>
+    <div class="col-md-3">
+      <p>123 People Nearby</p>
       <a class="btn btn-info" href="#newDeal">+ Add A New Deal</a>
-    </div>
-    <div class="col-md-1 col-md-offset-9">
-      <a href="#logout">Logout</a>
     </div>
   </div>
 
