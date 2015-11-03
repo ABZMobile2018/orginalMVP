@@ -73,11 +73,12 @@ class Dash.Views.NewDeal extends Backbone.View
             data: alert: msg
           },
             success: ->
+              window.location.href = "#dashboard"
               return console.log 'Push was successful'
             error: (error) ->
               return console.error error
           
-          window.location.href="#dashboard"
+          
           
         error :(error)->
           $("#create").html('Create').prop('disabled', false)
