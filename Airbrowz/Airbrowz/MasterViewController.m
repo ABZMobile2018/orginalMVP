@@ -54,12 +54,13 @@
 
         if ([[self.categoryFilterArray objectAtIndex:cat] boolValue]) {
             // * 1000 for km to m conversion
+  
             if ([dealLoc distanceInKilometersTo: self.currentLocation] * 1000 <= self.proximitySlider.value) {
                 [result addObject: deal];
             }
         }
     }
-    
+
     return result;
 }
 
@@ -130,6 +131,7 @@
                 if (!error) {
                     // The find succeeded.
                     self.dealsRawModel = deals;
+                    
                    
                     
                 } else {

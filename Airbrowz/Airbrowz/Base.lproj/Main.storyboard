@@ -336,8 +336,44 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_mainDeal" rowHeight="225" id="1mB-g0-Fcw" customClass="DealDetailDealTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="225"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1mB-g0-Fcw" id="cck-t2-mft">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="224.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fI9-wh-Avq" customClass="PFImageView">
+                                            <rect key="frame" x="0.0" y="17" width="414" height="216.5"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSh-GF-6Qq">
+                                            <rect key="frame" x="21" y="167" width="373" height="30"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="fI9-wh-Avq" firstAttribute="height" secondItem="cck-t2-mft" secondAttribute="height" id="Fyu-3a-eHE"/>
+                                        <constraint firstItem="fI9-wh-Avq" firstAttribute="centerY" secondItem="cck-t2-mft" secondAttribute="centerY" id="Q9b-lb-HRi"/>
+                                        <constraint firstItem="fI9-wh-Avq" firstAttribute="width" secondItem="cck-t2-mft" secondAttribute="width" id="RcK-t9-535"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="CSh-GF-6Qq" secondAttribute="trailing" constant="20" id="mBr-4a-0Tt"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="CSh-GF-6Qq" secondAttribute="bottom" constant="30" id="tbR-gl-lzf"/>
+                                        <constraint firstItem="CSh-GF-6Qq" firstAttribute="leading" secondItem="cck-t2-mft" secondAttribute="leadingMargin" constant="20" id="x8o-pA-4iF"/>
+                                        <constraint firstItem="fI9-wh-Avq" firstAttribute="centerX" secondItem="cck-t2-mft" secondAttribute="centerX" id="xzn-Oh-1OR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="dealHeading" destination="CSh-GF-6Qq" id="N0g-Pf-bvX"/>
+                                    <outlet property="dealImageView" destination="fI9-wh-Avq" id="QyY-YA-1ZZ"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_googlemaps" rowHeight="228" id="qKE-d6-t9I" customClass="DealDetailGmapTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="414" height="228"/>
+                                <rect key="frame" x="0.0" y="253" width="414" height="228"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qKE-d6-t9I" id="hDc-6z-TuO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="227.5"/>
@@ -380,7 +416,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_companyDetails" rowHeight="112" id="m7Q-uD-nlI" customClass="DealDetailCompanyTableViewCell">
-                                <rect key="frame" x="0.0" y="256" width="414" height="112"/>
+                                <rect key="frame" x="0.0" y="481" width="414" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m7Q-uD-nlI" id="Ol5-1H-Cgw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="111.5"/>
@@ -453,7 +489,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_youtube" rowHeight="192" id="TrN-Ef-VlH" customClass="DealDetailYoutubeTableViewCell">
-                                <rect key="frame" x="0.0" y="368" width="414" height="192"/>
+                                <rect key="frame" x="0.0" y="593" width="414" height="192"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TrN-Ef-VlH" id="3iY-4J-Bsf">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="191.5"/>
@@ -489,7 +525,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell_moreDealsHeading" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_moreDealsHeading" rowHeight="50" id="5KY-v8-wVA" customClass="DealDetailMoreDealsHeadingTableViewCell">
-                                <rect key="frame" x="0.0" y="560" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="785" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5KY-v8-wVA" id="9JX-gv-wKX">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
@@ -513,43 +549,6 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="headingLabel" destination="jHB-lk-iip" id="e9d-vK-Gfi"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell_mainDeal" rowHeight="290" id="ZeU-QF-cdu" customClass="DealDetailDealTableViewCell">
-                                <rect key="frame" x="0.0" y="610" width="414" height="290"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZeU-QF-cdu" id="b4I-f6-5SL">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-za-WrB" customClass="PFImageView">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
-                                            <animations/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Deal Heading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhK-oe-8NA">
-                                            <rect key="frame" x="26" y="210" width="362" height="39"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstItem="a2d-za-WrB" firstAttribute="centerX" secondItem="b4I-f6-5SL" secondAttribute="centerX" id="1bK-JB-06H"/>
-                                        <constraint firstItem="HhK-oe-8NA" firstAttribute="leading" secondItem="b4I-f6-5SL" secondAttribute="leadingMargin" constant="20" id="Ewp-fA-bUZ"/>
-                                        <constraint firstItem="a2d-za-WrB" firstAttribute="width" secondItem="b4I-f6-5SL" secondAttribute="width" id="OmU-XQ-4hN"/>
-                                        <constraint firstItem="a2d-za-WrB" firstAttribute="centerY" secondItem="b4I-f6-5SL" secondAttribute="centerY" id="W5j-yq-xTN"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="HhK-oe-8NA" secondAttribute="bottom" constant="32.5" id="WOk-hg-F9B"/>
-                                        <constraint firstItem="a2d-za-WrB" firstAttribute="height" secondItem="b4I-f6-5SL" secondAttribute="height" id="suy-dj-NpB"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="HhK-oe-8NA" secondAttribute="trailing" constant="20" id="vqJ-HI-V4V"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <outlet property="dealHeading" destination="HhK-oe-8NA" id="61Q-jO-7Ul"/>
-                                    <outlet property="dealImageView" destination="a2d-za-WrB" id="r7g-lu-u5U"/>
-                                    <outlet property="imageView" destination="a2d-za-WrB" id="5wx-SZ-P7Z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
