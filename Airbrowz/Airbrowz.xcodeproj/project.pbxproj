@@ -14,6 +14,7 @@
 		B05196FA1BE60CB6000E8CEA /* DealDetailDealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05196F91BE60CB6000E8CEA /* DealDetailDealTableViewCell.m */; };
 		B05196FE1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05196FD1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.m */; };
 		B05197011BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05197001BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.m */; };
+		B05DFD321BE9B41600D481A9 /* DataMigrator.m in Sources */ = {isa = PBXBuildFile; fileRef = B05DFD311BE9B41600D481A9 /* DataMigrator.m */; };
 		B09B26291BDDE56E0053C595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26281BDDE56E0053C595 /* main.m */; };
 		B09B262C1BDDE56E0053C595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B262B1BDDE56E0053C595 /* AppDelegate.m */; };
 		B09B26321BDDE56E0053C595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09B26301BDDE56E0053C595 /* Main.storyboard */; };
@@ -60,6 +61,8 @@
 		B05196FD1BE6BDDA000E8CEA /* DealDetailYoutubeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailYoutubeTableViewCell.m; sourceTree = "<group>"; };
 		B05196FF1BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailMoreDealsHeadingTableViewCell.h; sourceTree = "<group>"; };
 		B05197001BE71324000E8CEA /* DealDetailMoreDealsHeadingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailMoreDealsHeadingTableViewCell.m; sourceTree = "<group>"; };
+		B05DFD301BE9B41600D481A9 /* DataMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMigrator.h; sourceTree = "<group>"; };
+		B05DFD311BE9B41600D481A9 /* DataMigrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMigrator.m; sourceTree = "<group>"; };
 		B09B26241BDDE56E0053C595 /* Airbrowz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbrowz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09B26281BDDE56E0053C595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B09B262A1BDDE56E0053C595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				B09B26271BDDE56E0053C595 /* Supporting Files */,
 				B09BB5431BE0722D00E02FB3 /* AirbrowzCommons.h */,
 				B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */,
+				B05DFD301BE9B41600D481A9 /* DataMigrator.h */,
+				B05DFD311BE9B41600D481A9 /* DataMigrator.m */,
 			);
 			path = Airbrowz;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05DFD321BE9B41600D481A9 /* DataMigrator.m in Sources */,
 				B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */,
 				B05196F41BE608F2000E8CEA /* DealDetailCompanyTableViewCell.m in Sources */,
 				B05196F11BE5F76D000E8CEA /* DealDetailGmapTableViewCell.m in Sources */,

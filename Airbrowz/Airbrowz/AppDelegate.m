@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "DataMigrator.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()
@@ -20,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [DataMigrator migrateDataIfNecessary];
     
     // Initialize Parse.
     [Parse setApplicationId:@"D7VKvOCpa2Pnt8lr3dvynhVQxoDW6AgiXVsyQuB1"

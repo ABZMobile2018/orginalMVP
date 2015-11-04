@@ -71,8 +71,10 @@
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCategoryLabelClick)];
     [self.categoryLabel addGestureRecognizer:tapGesture];
  
-    
-    
+    [self.proximitySlider addTarget:self action:@selector(proximityChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.proximitySlider setThumbImage:[UIImage imageNamed:@"SliderThumb"] forState:UIControlStateNormal];
+    [self.proximitySlider setThumbImage:[UIImage imageNamed:@"SliderThumb"] forState:UIControlStateHighlighted];
+
 }
 
 
@@ -85,7 +87,7 @@
         if (_categoryFilterArray == nil) {
             
             _categoryFilterArray = [[NSMutableArray alloc] init];
-            for (int i = 0 ; i <= MISC ; i++) { // MISC is the last item
+            for (int i = 0 ; i <= Misc ; i++) { // MISC is the last item
                 [_categoryFilterArray addObject: @YES];
             }
             
@@ -161,19 +163,19 @@
 
     [self configureCategorySelector];
     
+    self.proximitySlider.value = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULT_PROXIMITY_KEY] floatValue];
     [self proximityChanged: self.proximitySlider];
     
-    [self.proximitySlider addTarget:self action:@selector(proximityChanged:) forControlEvents:UIControlEventValueChanged];
-    [self.proximitySlider setThumbImage:[UIImage imageNamed:@"SliderThumb"] forState:UIControlStateNormal];
-    [self.proximitySlider setThumbImage:[UIImage imageNamed:@"SliderThumb"] forState:UIControlStateHighlighted];
-    
+
     
     [self fetchDeals];
     
     categoryViewOriginYWhenOpened = self.categoryCollectionView.frame.origin.y;
     categoryViewOriginYWhenClosed = self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height;
+    
 
-    // Update deals every 20 secs..  TODO: this can be optimized... web request every 5s is too much..
+
+    // Update deals every 5 secs..  TODO: this can be optimized... web request every 5s is too much... use comet or something.
     [NSTimer scheduledTimerWithTimeInterval: 5.0
                                              target: self
                                            selector: @selector(fetchDeals)
@@ -183,16 +185,21 @@
 }
 
 
-
 - (void) viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
     CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
-                             self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height,
+                             categoryViewOriginYWhenClosed,
                              self.categoryCollectionView.frame.size.width,
                              self.categoryCollectionView.frame.size.height);
     
     self.categoryCollectionView.frame = rect;
     categoryIsHidden = true;
+
+    
+    
 }
+
 
 
 
@@ -232,6 +239,7 @@
                    self.categoryCollectionView.frame.size.width,
                    self.categoryCollectionView.frame.size.height);
     }];
+    
 }
 
 - (void) hideCategoriesWithAnimation: (BOOL) animated {
@@ -252,7 +260,7 @@
      
         self.categoryCollectionView.frame = rect;
     }
-
+  
     
 }
 
@@ -364,32 +372,53 @@
     NSString *categoryName;
     
     switch (indexPath.row) {
-        case FASHION:
-            categoryName = @"Fashion";
+        case MaternityAndChildrensWear:
+            categoryName = @"Maternity & Children’s wear";
             break;
-        case FOOD:
-            categoryName = @"Food";
+        case MensFashion:
+            categoryName = @"Men’s Fashion";
             break;
-        case ELECTRONICS:
-            categoryName = @"Electronics";
+        case WomensFashion:
+            categoryName = @"Women’s Fashion";
             break;
-        case ENTERTAINMENT:
-            categoryName = @"Entertainment";
+        case BooksMusicGamesGifts:
+            categoryName = @"Books, Music, Games & Gifts";
             break;
-        case HEALTH_FITNESS:
-            categoryName = @"Health/Fitness";
+        case ComputersTabletsMobiles:
+            categoryName = @"Computers, Tablets & Mobiles";
             break;
-        case SERVICE:
-            categoryName = @"Service";
+        case HandbagsFootwear:
+            categoryName = @"Handbags & Footwear";
             break;
-        case LIFESTYLE:
-            categoryName = @"LifeStyle";
+        case HealthBeauty:
+            categoryName = @"Health & Beauty";
             break;
-        case FURNITURE:
-            categoryName = @"Furniture";
+        case FitnessWellBeing:
+            categoryName = @"Fitness & Well-Being";
             break;
-        case MISC:
-            categoryName = @"Misc.";
+        case FoodDrink:
+            categoryName = @"Food & Drink";
+            break;
+        case ElectronicsEntertainment:
+            categoryName = @"Electronics & Entertainment";
+            break;
+        case Automotive:
+            categoryName = @"Automotive";
+            break;
+        case HomeGarden:
+            categoryName = @"Home & Garden";
+            break;
+        case Services:
+            categoryName = @"Services";
+            break;
+        case SportsOutdoorTravel:
+            categoryName = @"Sports, Outdoor & Travel";
+            break;
+        case Events:
+            categoryName = @"Events";
+            break;
+        case Misc:
+            categoryName =@"Misc";
             break;
         default:
             categoryName = @"Uhoh...";

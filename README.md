@@ -1,7 +1,23 @@
 # kiwi-airbrowz
 
 ## Category mappings
-0=Fashion , 1=Food, 2=Electronics, 3=Entertainment, 4=Health/Fitness, 5=Service, 6=Lifestyle. 7=Furniture, 8=Misc
+0 = Maternity & Children’s wear
+1 = Men’s Fashion
+2 = Women’s Fashion
+​3 = Books, Music, Games & Gifts
+4 = Computers, Tablets & Mobiles
+5 = Handbags & Footwear
+6 = Health & Beauty
+7 = Fitness & Well-Being
+8 = Food & Drink
+9 = Electronics & Entertainment
+10 = Automotive
+11 = Home & Garden
+12 = Services
+13 = Sports, Outdoor & Travel
+14 = Events
+15 = Misc
+
 
 ## Push Notifications
 Example: Following curl will send push notification to every users
