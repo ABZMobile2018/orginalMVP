@@ -188,32 +188,6 @@
     NSLog(@"viewdidload");
 }
 
-//- (void) viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//    CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
-//                             categoryViewOriginYWhenClosed,
-//                             self.categoryCollectionView.frame.size.width,
-//                             self.categoryCollectionView.frame.size.height);
-//    
-//    self.categoryCollectionView.frame = rect;
-//    self.categoryCollectionView.hidden = YES;
-//    categoryIsHidden = true;
-//    NSLog(@"viewWillappear");
-//}
-//
-//- (void) viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    
-//    CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
-//                             categoryViewOriginYWhenClosed,
-//                             self.categoryCollectionView.frame.size.width,
-//                             self.categoryCollectionView.frame.size.height);
-//    
-//    self.categoryCollectionView.frame = rect;
-//    self.categoryCollectionView.hidden = NO;
-//    NSLog(@"viewdidappear");
-//    
-//}
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
