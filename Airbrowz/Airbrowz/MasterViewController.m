@@ -25,7 +25,7 @@
 
 
 @implementation MasterViewController {
-    
+    int runTwiceToken;
     bool categoryIsHidden;
     double categoryViewOriginYWhenClosed;
     double categoryViewOriginYWhenOpened;
@@ -181,23 +181,59 @@
                                            selector: @selector(fetchDeals)
                                            userInfo: nil
                                             repeats: YES];
+    
 
+ 
+    
+    NSLog(@"viewdidload");
 }
 
+//- (void) viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
+//                             categoryViewOriginYWhenClosed,
+//                             self.categoryCollectionView.frame.size.width,
+//                             self.categoryCollectionView.frame.size.height);
+//    
+//    self.categoryCollectionView.frame = rect;
+//    self.categoryCollectionView.hidden = YES;
+//    categoryIsHidden = true;
+//    NSLog(@"viewWillappear");
+//}
+//
+//- (void) viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    
+//    CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
+//                             categoryViewOriginYWhenClosed,
+//                             self.categoryCollectionView.frame.size.width,
+//                             self.categoryCollectionView.frame.size.height);
+//    
+//    self.categoryCollectionView.frame = rect;
+//    self.categoryCollectionView.hidden = NO;
+//    NSLog(@"viewdidappear");
+//    
+//}
 
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    runTwiceToken = 0;
+    self.categoryCollectionView.hidden = NO;
+}
 - (void) viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    if (runTwiceToken < 2) { // This block must exactly run twice... it's a hack fix... only god knows why... sorry...
+        CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
+                                 categoryViewOriginYWhenClosed,
+                                 self.categoryCollectionView.frame.size.width,
+                                 self.categoryCollectionView.frame.size.height);
+        
+        self.categoryCollectionView.frame = rect;
+        categoryIsHidden = true;
+        runTwiceToken++;
+  
+    }
 
-    CGRect rect = CGRectMake(self.categoryCollectionView.frame.origin.x,
-                             categoryViewOriginYWhenClosed,
-                             self.categoryCollectionView.frame.size.width,
-                             self.categoryCollectionView.frame.size.height);
-    
-    self.categoryCollectionView.frame = rect;
-    categoryIsHidden = true;
-
-    
-    
 }
 
 
@@ -329,6 +365,7 @@
         
         [self.detailViewController.tableView reloadData];
         // Push the view controller.
+        self.categoryCollectionView.hidden = true; //HERE
         [self.navigationController pushViewController:self.detailViewController animated:YES];
         self.detailViewController.title = dealDetail[@"owner"][@"company_name"];
         
