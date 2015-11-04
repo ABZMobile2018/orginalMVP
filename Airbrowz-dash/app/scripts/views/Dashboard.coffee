@@ -35,6 +35,8 @@ class Dash.Views.Dashboard extends Backbone.View
     output = Mustache.render @template(), { user : @user.toJSON() ,deals : @collection }
     @$el.html output
     
+    console.log @collection
+    
     _.map $('.time'), (ele)->
       time = $(ele).html()
       $(ele).html moment(time).fromNow()

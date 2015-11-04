@@ -17,7 +17,15 @@ class Dash.Views.NewDeal extends Backbone.View
 
   render: () ->
     @$el.html @template()
-
+    $('#date').datetimepicker(
+      inline     : true
+      sideBySide : true
+      useCurrent : true
+    )
+    $('#date').data('DateTimePicker').minDate(new Date())
+    now = (new Date())
+    now.setHours(now.getHours()+5);
+    $('#date').data('DateTimePicker').date(now)
   getYoutubeIdFromURI: (uri) ->
     match = RegExp('[?&]v=([^&]*)').exec(uri)
     match and decodeURIComponent(match[1].replace(/\+/g, ' '))
@@ -45,6 +53,7 @@ class Dash.Views.NewDeal extends Backbone.View
     deal.set 'mainImage', mainImage
     deal.set 'youtube_video_id', @getYoutubeIdFromURI(youtube)
     deal.set 'category', category
+    deal.set 'expiry', $('#date').data('DateTimePicker').date()._d
 
     $("#create").html('submitting...').prop('disabled', true)
 
