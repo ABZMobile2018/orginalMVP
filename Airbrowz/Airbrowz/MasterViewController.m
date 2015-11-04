@@ -165,7 +165,7 @@
     
     self.proximitySlider.value = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULT_PROXIMITY_KEY] floatValue];
     [self proximityChanged: self.proximitySlider];
-    
+
 
     
     [self fetchDeals];
@@ -184,9 +184,8 @@
     
 
  
-    
-    NSLog(@"viewdidload");
 }
+
 
 
 -(void) viewWillAppear:(BOOL)animated {
