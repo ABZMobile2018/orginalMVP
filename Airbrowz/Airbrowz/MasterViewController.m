@@ -124,8 +124,17 @@
             [query whereKey:@"location" nearGeoPoint:myLocation];
             // Include User object
             [query includeKey:@"owner"];
+            
+//            NSDate *currentDate =  [[NSDate alloc] init];
+//            NSLog(@"currentDate: %@", currentDate);
+//            
+//            [query whereKey:@"expiry" greaterThan: currentDate];
+            
             // Limit what could be a lot of points.
             query.limit = 100;
+            
+            
+            
             
             // Final list of objects
           
@@ -173,7 +182,9 @@
     categoryViewOriginYWhenOpened = self.categoryCollectionView.frame.origin.y;
     categoryViewOriginYWhenClosed = self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height;
     
-
+    // User white indicator for better visibility
+    self.categoryCollectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+    
 
     // Update deals every 5 secs..  TODO: this can be optimized... web request every 5s is too much... use comet or something.
     [NSTimer scheduledTimerWithTimeInterval: 5.0
@@ -181,6 +192,7 @@
                                            selector: @selector(fetchDeals)
                                            userInfo: nil
                                             repeats: YES];
+    
     
 
  
@@ -246,13 +258,15 @@
 
 - (void) showCategories {
     categoryIsHidden = false;
-  
+
     [UIView animateWithDuration:0.5f animations:^{
         self.categoryCollectionView.frame =
         CGRectMake(self.categoryCollectionView.frame.origin.x,
                    categoryViewOriginYWhenOpened,
                    self.categoryCollectionView.frame.size.width,
                    self.categoryCollectionView.frame.size.height);
+    } completion:^(BOOL finished){
+        [self.categoryCollectionView flashScrollIndicators]; // Let userknow it's scrollable!!
     }];
     
 }
