@@ -194,6 +194,7 @@
     runTwiceToken = 0;
     self.categoryCollectionView.hidden = NO;
 }
+
 - (void) viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     if (runTwiceToken < 2) { // This block must exactly run twice... it's a hack fix... only god knows why... sorry...
@@ -205,9 +206,9 @@
         self.categoryCollectionView.frame = rect;
         categoryIsHidden = true;
         runTwiceToken++;
-  
+        
     }
-
+    NSLog(@"here");
 }
 
 
@@ -219,6 +220,8 @@
 }
 
 - (IBAction)proximityChanged:(UISlider *)sender {
+    runTwiceToken = 0; // Hack Fix regarding collectionview
+    
     NSString *distanceString;
     
     if (sender.value >= 1000.0) {
@@ -228,6 +231,9 @@
         distanceString = [NSString stringWithFormat:@"%.f m", sender.value];
     }
     self.proximityRangeLabel.text = distanceString;
+    
+    
+    
     
 }
 
@@ -469,5 +475,6 @@
 
 - (IBAction)onProximitySelect:(id)sender {
     self.dealsFilteredModel = [self applyFilterOnRawModel: self.dealsRawModel];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:self.proximitySlider.value] forKey:USER_DEFAULT_PROXIMITY_KEY];
 }
 @end
