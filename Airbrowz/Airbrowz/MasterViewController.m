@@ -61,6 +61,10 @@
         }
     }
 
+//    for (PFObject *item in result) {
+//        NSLog(@"%@", [item objectId]);
+//    }
+    
     return result;
 }
 
@@ -125,10 +129,8 @@
             // Include User object
             [query includeKey:@"owner"];
             
-//            NSDate *currentDate =  [[NSDate alloc] init];
-//            NSLog(@"currentDate: %@", currentDate);
-//            
-//            [query whereKey:@"expiry" greaterThan: currentDate];
+            NSDate *currentDate =  [[NSDate alloc] init];
+            [query whereKey:@"expiry" greaterThan: currentDate];
             
             // Limit what could be a lot of points.
             query.limit = 100;
@@ -143,7 +145,7 @@
                     // The find succeeded.
                     self.dealsRawModel = deals;
                     
-                   
+           
                     
                 } else {
                     // Log details of the failure
@@ -341,6 +343,10 @@
         [cell.mainImageView loadInBackground];
         
         
+        // Set Expiry Label
+        NSDate *expiry = model[@"expiry"];
+        cell.expiryLabel.text = [AirbrowzCommons stringForExpirayLabel:expiry];
+        
     }
     
     return cell;
@@ -357,14 +363,18 @@
         self.detailViewController.model = dealDetail;
         
         [self.detailViewController.tableView reloadData];
-        // Push the view controller.
-        self.categoryCollectionView.hidden = true; //HERE
-        [self.navigationController pushViewController:self.detailViewController animated:YES];
+
         self.detailViewController.title = dealDetail[@"owner"][@"company_name"];
         
         
         self.detailViewController.moreDealsModel =
         [self moreDealsFromOwner:[dealDetail[@"owner"] objectId] except: [dealDetail objectId]];
+        
+        // Push the view controller.
+        [self.detailViewController.tableView reloadData];
+        [self.navigationController pushViewController:self.detailViewController animated:YES];
+        
+        self.categoryCollectionView.hidden = true;
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
