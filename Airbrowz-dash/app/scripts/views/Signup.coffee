@@ -40,6 +40,8 @@ class Dash.Views.Signup extends Backbone.View
     unless (email and password and description and street_number and street_name and postal_code and city and province and logo and company_name)
       return alert 'Please fill in all the textboxes'
 
+    Parse.User.logOut()
+    
     user = new (Parse.User)
     user.set 'username', email
     user.set 'password', password

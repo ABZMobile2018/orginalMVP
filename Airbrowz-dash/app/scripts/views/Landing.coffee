@@ -14,6 +14,7 @@ class Dash.Views.Landing extends Backbone.View
     'click #login'  : 'login'
 
   initialize: () ->
+
     @render()
 
   render: () ->
@@ -25,6 +26,7 @@ class Dash.Views.Landing extends Backbone.View
     email = $('#email').val()
     password = $('#password').val()
 
+    Parse.User.logOut()
     Parse.User.logIn email, password,
       success: (user) ->
         # Do stuff after successful login.
