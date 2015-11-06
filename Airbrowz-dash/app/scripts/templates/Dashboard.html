@@ -2,17 +2,16 @@
 
   {{#user}}
   <div class="row">
-    <div class="col-md-6">
-      <img src="{{company_logo.url}}" style="width:100px;">
+    <div class="col-md-2 text-right">
+      <img src="{{company_logo.url}}" style="width:100%;">
       <h4>{{company_name}}</h4>
+      <u><a href="#edit">Edit</a></u>
     </div>
-    <div class="col-md-6 text-right">
+    <div class="col-md-6 col-md-offset-4 text-right">
       <p><strong>Email:</strong> {{email}}</p> 
       <p><strong>Profile:</strong> {{description}}</p>
       <p><strong>Address:</strong> {{street_number}} {{street_name}} {{city}} {{province}} {{postal_code}}</p>
-
       <p>
-        <u><a href="#edit" class="btn btn-default">Edit</a></u>
         <span style="width:10px;"></span> 
         <u><a href="#logout">Logout</a></u>
       </p>
@@ -44,8 +43,9 @@
         <div class="viwedBy" data-created-at="{{createdAt}}">
           287
         </div>
-
-        <!-- <p>Address : <span class="address">{{address}}</span></p> -->
+        <p class="text-right">
+          <button class="delete btn btn-danger" data-object-id={{objectId}}>Delete</button>
+        </p>
       </div>
     </div>
     <div style="height:5vh;"></div>

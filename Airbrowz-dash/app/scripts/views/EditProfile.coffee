@@ -34,17 +34,6 @@ class Dash.Views.EditProfile extends Backbone.View
     city = $('#city').val().trim()
     province = $('#province').val().trim()
 
-    # if password
-    #   Parse.User.requestPasswordReset 'email@example.com',
-    #     success: ->
-    #       # Password reset request was sent successfully
-    #       return
-    #     error: (error) ->
-    #       # Show the error message somewhere
-    #       alert 'Error: ' + error.code + ' ' + error.message
-    #       return
-
-
     fileUploadControl = $('#company_logo')[0]
     logo = null
     if fileUploadControl.files.length > 0
