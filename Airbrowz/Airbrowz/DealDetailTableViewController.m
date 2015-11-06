@@ -11,6 +11,8 @@
 #import "DealDetailDealTableViewCell.h"
 #import "DealDetailGmapTableViewCell.h"
 #import "DealDetailYoutubeTableViewCell.h"
+#import "AirbrowzCommons.h"
+
 @import GoogleMaps;
 
 @interface DealDetailTableViewController ()
@@ -21,7 +23,7 @@
 @end
 
 @implementation DealDetailTableViewController
-
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
  
@@ -114,11 +116,21 @@
 
 -(DealDetailDealTableViewCell *) dequeueAndConfigureCellForDeal:(NSIndexPath *) indexPath {
     DealDetailDealTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellReuseIdentifierForIndexPath:indexPath] forIndexPath:indexPath];
+    PFObject *cur_model;
+    
+    // It is mainDeal
+    if (indexPath.row == 1) {
+        cur_model = self.model;
+    }
+    else { // It is more deals section
+        
+        cur_model = [self.moreDealsModel objectAtIndex:indexPath.row - 5]; // HERE
+    }
     
     cell.dealImageView.image = [UIImage imageNamed:@"dealImagePlaceholder"];
-    cell.dealImageView.file = self.model[@"mainImage"];
-    cell.dealHeading.text = self.model[@"heading"];
-    
+    cell.dealImageView.file = cur_model[@"mainImage"];
+    cell.dealHeading.text = cur_model[@"heading"];
+    cell.expiryLabel.text = [AirbrowzCommons stringForExpirayLabel:cur_model[@"expiry"]];
     [cell.dealImageView loadInBackground];
     
     

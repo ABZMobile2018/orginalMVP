@@ -35,5 +35,6 @@ typedef enum {
     Misc
 } DealCategory;
 
++ (NSString *) stringForExpirayLabel : (NSDate *) expiry;
 
 @end

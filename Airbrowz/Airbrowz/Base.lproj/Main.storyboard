@@ -61,8 +61,31 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealCell" rowHeight="291" id="gGP-eC-Z3G" customClass="DealTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealNoResultCell" id="Rra-id-Wwf">
                                         <rect key="frame" x="0.0" y="28" width="414" height="291"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rra-id-Wwf" id="XJb-SX-IOe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="There are no campaigns with given configuration.  Try adjusting your categories or proximity." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2o-5M-ROk">
+                                                    <rect key="frame" x="8" y="79" width="398" height="134"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="J2o-5M-ROk" firstAttribute="centerY" secondItem="XJb-SX-IOe" secondAttribute="centerY" id="ALG-R1-oHS"/>
+                                                <constraint firstItem="J2o-5M-ROk" firstAttribute="centerX" secondItem="XJb-SX-IOe" secondAttribute="centerX" id="AZ3-F1-aV9"/>
+                                                <constraint firstItem="J2o-5M-ROk" firstAttribute="width" secondItem="XJb-SX-IOe" secondAttribute="width" id="YJh-Vn-P5S"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealCell" rowHeight="291" id="gGP-eC-Z3G" customClass="DealTableViewCell">
+                                        <rect key="frame" x="0.0" y="319" width="414" height="291"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gGP-eC-Z3G" id="6SU-zq-0QC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
@@ -96,9 +119,17 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Expires in ........" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1S-ZK-43q">
+                                                    <rect key="frame" x="228" y="27" width="164" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="B1S-ZK-43q" firstAttribute="top" secondItem="6SU-zq-0QC" secondAttribute="topMargin" constant="10" id="2ml-1I-p3v"/>
                                                 <constraint firstItem="pZL-qv-5h9" firstAttribute="top" secondItem="6SU-zq-0QC" secondAttribute="topMargin" id="38X-Ar-UBg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="beA-8S-CbO" secondAttribute="trailing" constant="20" id="5Ep-Lt-Mn4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pB0-ZR-POz" secondAttribute="trailing" constant="20" id="72M-2F-xL3"/>
@@ -108,6 +139,7 @@
                                                 <constraint firstItem="pB0-ZR-POz" firstAttribute="top" secondItem="beA-8S-CbO" secondAttribute="bottom" constant="10" id="IiG-os-UOI"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="pB0-ZR-POz" secondAttribute="bottom" id="Juu-OZ-Pdi"/>
                                                 <constraint firstItem="pZL-qv-5h9" firstAttribute="width" secondItem="6SU-zq-0QC" secondAttribute="width" id="KpN-bd-6hg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="B1S-ZK-43q" secondAttribute="trailing" constant="10" id="QfG-VW-rV3"/>
                                                 <constraint firstItem="pZL-qv-5h9" firstAttribute="top" secondItem="6SU-zq-0QC" secondAttribute="topMargin" constant="-6" id="SBv-td-ZH7"/>
                                                 <constraint firstItem="pZL-qv-5h9" firstAttribute="leading" secondItem="6SU-zq-0QC" secondAttribute="leadingMargin" id="SpH-SJ-C67"/>
                                                 <constraint firstItem="pZL-qv-5h9" firstAttribute="height" secondItem="6SU-zq-0QC" secondAttribute="height" id="Ua3-oC-5Mz"/>
@@ -152,31 +184,9 @@
                                         <connections>
                                             <outlet property="dealDistanceLabel" destination="beA-8S-CbO" id="VZk-rJ-BbI"/>
                                             <outlet property="dealHeadingLabel" destination="pB0-ZR-POz" id="oXj-VO-cFH"/>
+                                            <outlet property="expiryLabel" destination="B1S-ZK-43q" id="US2-wu-PO1"/>
                                             <outlet property="mainImageView" destination="pZL-qv-5h9" id="YQW-ct-h7B"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealNoResultCell" id="Rra-id-Wwf">
-                                        <rect key="frame" x="0.0" y="319" width="414" height="291"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rra-id-Wwf" id="XJb-SX-IOe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="There are no campaigns with given configuration.  Try adjusting your categories or proximity." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2o-5M-ROk">
-                                                    <rect key="frame" x="8" y="79" width="398" height="134"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstItem="J2o-5M-ROk" firstAttribute="centerY" secondItem="XJb-SX-IOe" secondAttribute="centerY" id="ALG-R1-oHS"/>
-                                                <constraint firstItem="J2o-5M-ROk" firstAttribute="centerX" secondItem="XJb-SX-IOe" secondAttribute="centerX" id="AZ3-F1-aV9"/>
-                                                <constraint firstItem="J2o-5M-ROk" firstAttribute="width" secondItem="XJb-SX-IOe" secondAttribute="width" id="YJh-Vn-P5S"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealLoadingCell" rowHeight="266" id="8FV-sS-vxj">
                                         <rect key="frame" x="0.0" y="610" width="414" height="266"/>
@@ -371,12 +381,21 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Expires in ......" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IK0-Br-WLf">
+                                            <rect key="frame" x="172" y="37" width="222" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="13"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="IK0-Br-WLf" secondAttribute="trailing" constant="10" id="1NS-MK-alj"/>
                                         <constraint firstItem="fI9-wh-Avq" firstAttribute="height" secondItem="cck-t2-mft" secondAttribute="height" id="Fyu-3a-eHE"/>
                                         <constraint firstItem="fI9-wh-Avq" firstAttribute="centerY" secondItem="cck-t2-mft" secondAttribute="centerY" id="Q9b-lb-HRi"/>
                                         <constraint firstItem="fI9-wh-Avq" firstAttribute="width" secondItem="cck-t2-mft" secondAttribute="width" id="RcK-t9-535"/>
+                                        <constraint firstItem="IK0-Br-WLf" firstAttribute="top" secondItem="cck-t2-mft" secondAttribute="topMargin" constant="10" id="cSp-iC-Lqm"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="CSh-GF-6Qq" secondAttribute="trailing" constant="20" id="mBr-4a-0Tt"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="CSh-GF-6Qq" secondAttribute="bottom" constant="30" id="tbR-gl-lzf"/>
                                         <constraint firstItem="CSh-GF-6Qq" firstAttribute="leading" secondItem="cck-t2-mft" secondAttribute="leadingMargin" constant="20" id="x8o-pA-4iF"/>
@@ -387,6 +406,7 @@
                                 <connections>
                                     <outlet property="dealHeading" destination="CSh-GF-6Qq" id="N0g-Pf-bvX"/>
                                     <outlet property="dealImageView" destination="fI9-wh-Avq" id="QyY-YA-1ZZ"/>
+                                    <outlet property="expiryLabel" destination="IK0-Br-WLf" id="91b-Tk-EDo"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_googlemaps" rowHeight="228" id="qKE-d6-t9I" customClass="DealDetailGmapTableViewCell">

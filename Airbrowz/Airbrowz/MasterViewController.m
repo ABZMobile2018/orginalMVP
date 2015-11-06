@@ -61,6 +61,10 @@
         }
     }
 
+//    for (PFObject *item in result) {
+//        NSLog(@"%@", [item objectId]);
+//    }
+    
     return result;
 }
 
@@ -124,8 +128,15 @@
             [query whereKey:@"location" nearGeoPoint:myLocation];
             // Include User object
             [query includeKey:@"owner"];
+            
+            NSDate *currentDate =  [[NSDate alloc] init];
+            [query whereKey:@"expiry" greaterThan: currentDate];
+            
             // Limit what could be a lot of points.
             query.limit = 100;
+            
+            
+            
             
             // Final list of objects
           
@@ -134,7 +145,7 @@
                     // The find succeeded.
                     self.dealsRawModel = deals;
                     
-                   
+           
                     
                 } else {
                     // Log details of the failure
@@ -173,7 +184,9 @@
     categoryViewOriginYWhenOpened = self.categoryCollectionView.frame.origin.y;
     categoryViewOriginYWhenClosed = self.categoryCollectionView.frame.origin.y - self.categoryCollectionView.frame.size.height;
     
-
+    // User white indicator for better visibility
+    self.categoryCollectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+    
 
     // Update deals every 5 secs..  TODO: this can be optimized... web request every 5s is too much... use comet or something.
     [NSTimer scheduledTimerWithTimeInterval: 5.0
@@ -181,6 +194,7 @@
                                            selector: @selector(fetchDeals)
                                            userInfo: nil
                                             repeats: YES];
+    
     
 
  
@@ -246,13 +260,15 @@
 
 - (void) showCategories {
     categoryIsHidden = false;
-  
+
     [UIView animateWithDuration:0.5f animations:^{
         self.categoryCollectionView.frame =
         CGRectMake(self.categoryCollectionView.frame.origin.x,
                    categoryViewOriginYWhenOpened,
                    self.categoryCollectionView.frame.size.width,
                    self.categoryCollectionView.frame.size.height);
+    } completion:^(BOOL finished){
+        [self.categoryCollectionView flashScrollIndicators]; // Let userknow it's scrollable!!
     }];
     
 }
@@ -327,6 +343,10 @@
         [cell.mainImageView loadInBackground];
         
         
+        // Set Expiry Label
+        NSDate *expiry = model[@"expiry"];
+        cell.expiryLabel.text = [AirbrowzCommons stringForExpirayLabel:expiry];
+        
     }
     
     return cell;
@@ -343,14 +363,18 @@
         self.detailViewController.model = dealDetail;
         
         [self.detailViewController.tableView reloadData];
-        // Push the view controller.
-        self.categoryCollectionView.hidden = true; //HERE
-        [self.navigationController pushViewController:self.detailViewController animated:YES];
+
         self.detailViewController.title = dealDetail[@"owner"][@"company_name"];
         
         
         self.detailViewController.moreDealsModel =
         [self moreDealsFromOwner:[dealDetail[@"owner"] objectId] except: [dealDetail objectId]];
+        
+        // Push the view controller.
+        [self.detailViewController.tableView reloadData];
+        [self.navigationController pushViewController:self.detailViewController animated:YES];
+        
+        self.categoryCollectionView.hidden = true;
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];

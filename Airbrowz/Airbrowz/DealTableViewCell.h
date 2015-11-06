@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UILabel *dealHeadingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dealDistanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expiryLabel;
 
 
 

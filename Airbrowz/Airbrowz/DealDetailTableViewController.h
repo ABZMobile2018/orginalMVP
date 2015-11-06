@@ -22,4 +22,5 @@ typedef enum {
 
 @property(strong, nonatomic) PFObject *model;
 @property(strong, nonatomic) NSArray *moreDealsModel;
+
 @end
