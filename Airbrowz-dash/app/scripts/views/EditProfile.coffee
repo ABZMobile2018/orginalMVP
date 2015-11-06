@@ -35,10 +35,10 @@ class Dash.Views.EditProfile extends Backbone.View
     province = $('#province').val().trim()
 
     fileUploadControl = $('#company_logo')[0]
-    logo = null
     if fileUploadControl.files.length > 0
       file = fileUploadControl.files[0]
       logo = new (Parse.File)('logo.jpg', file)
+      @user_model.set('company_logo', logo)
 
     @user_model.set('description', description)
     @user_model.set('street_number', street_number)
@@ -46,7 +46,6 @@ class Dash.Views.EditProfile extends Backbone.View
     @user_model.set('postal_code', postal_code)
     @user_model.set('city', city)
     @user_model.set('province', province)
-    @user_model.set('company_logo', logo) if logo
     @user_model.set('company_name', company_name)
 
     if password
