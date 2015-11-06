@@ -16,6 +16,7 @@ class Dash.Views.Dashboard extends Backbone.View
     Parse.User.current().fetch().then (user)=>
       console.log user.toJSON()
       @user = Parse.User.current()
+      console.log user
       query = new (Parse.Query)('Deals')
       query.equalTo 'owner', user
       query.find success: (deals)=>
@@ -39,7 +40,14 @@ class Dash.Views.Dashboard extends Backbone.View
     
     _.map $('.time'), (ele)->
       time = $(ele).html()
-      $(ele).html moment(time).fromNow()
+      $(ele).html moment(time).from(new Date())
+
+    _.map $('.valid-time'), (ele)->
+      time = $(ele).html()
+      time = moment(time).from(new Date())
+      if time.indexOf('ago') > -1
+        return $(ele).html "Expired #{ time }"
+      $(ele).html "Expires #{ time }"
 
     _.map $('.viwedBy'), (ele)->
       time = $(ele).attr('data-created-at')
