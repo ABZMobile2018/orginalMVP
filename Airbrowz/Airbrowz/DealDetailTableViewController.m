@@ -168,7 +168,7 @@
 -(DealDetailYoutubeTableViewCell *) dequeueAndConfigureCellForYoutube: (NSIndexPath *) indexPath {
     // Do not dequeue for youtube... takes bit of time to init
     // Let's instantiate once in viewDidLoad
-    if (self.model[@"youtube_video_id"] && [self.model[@"youtube_video_id"] length] != 0) {
+    if (self.model[@"youtube_video_id"] && self.model[@"youtube_video_id"] != [NSNull class] && [self.model[@"youtube_video_id"] length] != 0) {
         [self.youtubeVideoCell.youtubePlaceholder loadWithVideoId:self.model[@"youtube_video_id"]];
 
     }
@@ -212,7 +212,7 @@
         case Cell_GoogleMaps:
             return 200.0;
         case Cell_YoutubeVideo:
-            if (self.model[@"youtube_video_id"] && [self.model[@"youtube_video_id"] length] != 0)
+            if (self.model[@"youtube_video_id"] && self.model[@"youtube_video_id"] != [NSNull class] && [self.model[@"youtube_video_id"] length] != 0)
                 return 250.0;
             else
                 return 0.0;
