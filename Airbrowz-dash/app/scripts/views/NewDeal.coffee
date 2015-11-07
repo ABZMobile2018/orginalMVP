@@ -53,7 +53,7 @@ class Dash.Views.NewDeal extends Backbone.View
     deal = new Deals()
     deal.set 'heading', heading
     deal.set 'mainImage', mainImage
-    deal.set 'youtube_video_id', @getYoutubeIdFromURI(youtube)
+    deal.set 'youtube_video_id', @getYoutubeIdFromURI(youtube) or ''
     deal.set 'category', category
     deal.set 'expiry', $('#date').data('DateTimePicker').date()._d
 
