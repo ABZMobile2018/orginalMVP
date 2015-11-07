@@ -32,6 +32,7 @@ class Dash.Views.NewDeal extends Backbone.View
 
   create : (e)->
     e.preventDefault()
+    $("#create").html('submitting...').prop('disabled', true)
 
     heading = $('#heading').val()
     fileUploadControl = $('#dealImage')[0]
@@ -45,6 +46,7 @@ class Dash.Views.NewDeal extends Backbone.View
 
     unless (heading and mainImage and category >= 0)
       console.log heading, mainImage, category
+      $("#create").html('Create').prop('disabled', false)
       return alert 'Please make sure that Heading, Image, and Category are sections are set'
 
     Deals = Parse.Object.extend("Deals");
@@ -54,8 +56,6 @@ class Dash.Views.NewDeal extends Backbone.View
     deal.set 'youtube_video_id', @getYoutubeIdFromURI(youtube)
     deal.set 'category', category
     deal.set 'expiry', $('#date').data('DateTimePicker').date()._d
-
-    $("#create").html('submitting...').prop('disabled', true)
 
     # Get longitude and latitude
     postal_code = Parse.User.current().get('postal_code')
@@ -86,8 +86,6 @@ class Dash.Views.NewDeal extends Backbone.View
               return console.log 'Push was successful'
             error: (error) ->
               return console.error error
-          
-          
           
         error :(error)->
           $("#create").html('Create').prop('disabled', false)
