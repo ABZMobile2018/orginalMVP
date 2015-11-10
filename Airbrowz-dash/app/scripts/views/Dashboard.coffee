@@ -42,7 +42,9 @@ class Dash.Views.Dashboard extends Backbone.View
     _.map $('.viwedBy'), (ele)->
       time = $(ele).attr('data-created-at')
       numbViewed = (new Date()).getTime() - (new Date(time)).getTime()
-      numbViewed  = parseInt(numbViewed/10000)
+      numbViewed  = parseInt numbViewed/10000
+      numbViewed = parseInt(numbViewed / 10) while numbViewed > 1000
+
       numbReached = numbViewed + 123
       clickRate = numbViewed/numbReached * 100
       clickRate = parseInt clickRate
