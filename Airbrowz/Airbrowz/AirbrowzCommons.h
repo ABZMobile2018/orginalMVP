@@ -36,5 +36,5 @@ typedef enum {
 } DealCategory;
 
 + (NSString *) stringForExpirayLabel : (NSDate *) expiry;
-
++ (NSString *) stringForHoursFormat: (NSString *) hours;
 @end

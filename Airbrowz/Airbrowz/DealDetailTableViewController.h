@@ -12,12 +12,13 @@
 
 - (IBAction)onGoogleMapsButtonClick:(id)sender;
 
+
 typedef enum {
     Cell_CompanyDetails,
-    Cell_MainDealImage,
     Cell_GoogleMaps,
     Cell_YoutubeVideo,
-    Cell_MoreDealsHeading
+    Cell_MoreDealsHeading,
+    Cell_MainDealImage,
 } CellType;
 
 @property(strong, nonatomic) PFObject *model;

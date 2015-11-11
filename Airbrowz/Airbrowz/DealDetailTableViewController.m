@@ -32,6 +32,8 @@
     self.youtubeVideoCell = [self.tableView dequeueReusableCellWithIdentifier:[self cellReuseIdentifierForIndexPath:ytcellIP] forIndexPath:ytcellIP];
     
     self.tableView.separatorColor = [UIColor clearColor];
+    
+    
 }
 -(void) viewWillAppear:(BOOL)animated {
     // Preconfigure youtubeCell
@@ -54,7 +56,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     if (self.moreDealsModel == nil || [self.moreDealsModel count] == 0) {
-        return 4;
+        return 5;
     }
     else {
         return 5+ [self.moreDealsModel count]; //Base 4 + 1 For heading + array count for items
@@ -104,6 +106,36 @@
     cell.companyAddressLabel.text = address;
     // Set Company Name
     cell.companyNameLabel.text = self.model[@"owner"][@"company_name"];
+    // Set Company Phone
+    cell.companyPhoneLabel.text = self.model[@"owner"][@"phone"];
+    // Set Facebook URL
+    cell.facebookId = self.model[@"owner"][@"facebook_id"];
+    
+    // Set Hours
+
+    NSArray *hoursArray = self.model[@"owner"][@"hours_of_operation"];
+    if (hoursArray) {
+        
+        NSMutableString *hoursString = [[NSMutableString alloc] init];
+        
+        for (NSArray *day in hoursArray) {
+            if ([day count] == 0) {
+                [hoursString appendString:@"Closed\n"];
+            }
+            else {
+                NSString *startTime = [AirbrowzCommons stringForHoursFormat:[day objectAtIndex:0]];
+                NSString *endTime = [AirbrowzCommons stringForHoursFormat: [day objectAtIndex:1]];
+                                      
+                                      
+                [hoursString appendString:
+                 [NSString stringWithFormat:@"%@ - %@\n", startTime, endTime]];
+                
+               
+            }
+        }
+        [hoursString deleteCharactersInRange:NSMakeRange([hoursString length]-1, 1)];
+        cell.companyHoursLabel.text = hoursString;
+    }
     
     
     // Load Logo in background
@@ -119,7 +151,7 @@
     PFObject *cur_model;
     
     // It is mainDeal
-    if (indexPath.row == 1) {
+    if (indexPath.row == 4) {
         cur_model = self.model;
     }
     else { // It is more deals section
@@ -206,9 +238,12 @@
 
     switch (indexPath.row) {
         case Cell_CompanyDetails:
-            return 120.0;
+            if (self.model[@"owner"][@"facebook_id"] && self.model[@"owner"][@"facebook_id"] != [NSNull class] && [self.model[@"owner"][@"facebook_id"] length] != 0)
+                return 370.0;
+            else
+                return 300.0;
         case Cell_MainDealImage:
-            return 280.0;
+            return 130.0;
         case Cell_GoogleMaps:
             return 200.0;
         case Cell_YoutubeVideo:
@@ -220,7 +255,7 @@
             return 35.0f;
             
         default: // More deals
-            return 280.0;
+            return 130.0;
     }
 }
 

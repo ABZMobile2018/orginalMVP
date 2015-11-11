@@ -10,6 +10,29 @@
 
 @implementation AirbrowzCommons
 
++ (NSString *) stringForHoursFormat: (NSString *) hours {
+    
+    if ([@"00:00" isEqualToString:hours]) {
+        return @"Midnight";
+    }
+    
+    NSMutableString *result = [[NSMutableString alloc] init];
+    
+    NSArray *splitted = [hours componentsSeparatedByString:@":"];
+    
+    int hr = [[splitted objectAtIndex:0] intValue];
+    if (hr < 12) {
+        [result appendString:[NSString stringWithFormat:@"%d:%@ AM", hr, [splitted objectAtIndex:1]]];
+    }
+    
+    else {
+        [result appendString:[NSString stringWithFormat:@"%d:%@ PM", hr, [splitted objectAtIndex:1]]];
+    }
+    
+    
+    return result;
+}
+
 + (NSString *) stringForExpirayLabel : (NSDate *) expiry{
     NSDate *currentDate = [[NSDate alloc] init];
     
