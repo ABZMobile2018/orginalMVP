@@ -1,15 +1,26 @@
 * {
-  -webkit-border-radius: 0 !important;
-     -moz-border-radius: 0 !important;
-          border-radius: 0 !important;
 }
 
 html {
-  background-color: #FFFFFF !important;
+  background-color: #f5f8fa !important;
 }
 
 body {
-  background: #FFFFFF;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1e3948;
+  background-color: #f5f8fa;
+  padding-bottom:50px;
+}
+
+.top{
+  border-color: #d3e0e9;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  /*margin-bottom:80px;*/
 }
 
 .landing {
@@ -66,3 +77,19 @@ img {
   width:100%;
 }
 
+.card {
+  border-color: #d3e0e9;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  padding:30px;
+}
+
+.merchant-logo {
+  max-width: 150px;
+  margin-top: -100px;
+  margin-bottom: 5px;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}

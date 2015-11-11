@@ -1,53 +1,66 @@
+<div style="height:100px;"></div>
 <div class="container">
 
-  {{#user}}
+  
   <div class="row">
-    <div class="col-md-2 text-right">
-      <img src="{{company_logo.url}}" style="width:100%;">
-      <h4>{{company_name}}</h4>
-      <u><a href="#edit">Edit</a></u>
-    </div>
-    <div class="col-md-6 col-md-offset-4 text-right">
-      <p><strong>Email:</strong> {{email}}</p> 
-      <p><strong>Profile:</strong> {{description}}</p>
-      <p><strong>Address:</strong> {{street_number}} {{street_name}} {{city}} {{province}} {{postal_code}}</p>
-      <p>
-        <span style="width:10px;"></span> 
-        <u><a href="#logout">Logout</a></u>
-      </p>
-    </div>
-  </div>
-  {{/user}}
+    {{#user}}
+    <div class="col-md-4">
 
-  <hr>
-
-  <div class="row">
-    <div class="col-md-3">
-      <p>123 People Nearby</p>
-      <a class="btn btn-info" href="#newDeal">+ Add A New Deal</a>
-    </div>
-  </div>
-
-  <hr>
-
-  {{#deals}}
-    <div class="row">
-      <div class="col-md-4">
-        <img src="{{mainImage.url}}"/>
+      <div class="text-center card">
+        <h4>{{company_name}}</h4>
+        <img src="{{company_logo.url}}" class="merchant-logo">
+        <hr>
+        <p>{{description}}</p>
       </div>
-      <div class="col-md-5">
-        <h1>{{heading}}</h1>
-        <p>Created <span class="time">{{createdAt}}</span></p>
-        <p class="valid-time">{{expiry.iso}}</p>
 
-        <div class="viwedBy" data-created-at="{{createdAt}}">
-          287
+      <hr>
+
+      <div class="card">
+        <h4 style="display: inline;">About</h4> · <a href="#edit">Edit</a>
+        <hr>
+        <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{email}}</p> 
+        <p><span class="glyphicon glyphicon-map-marker"></span> {{street_number}} {{street_name}} {{city}} {{province}} {{postal_code}}</p>
+        
+        <p class="text-right"><u><a href="#logout">Logout</a></u></p>
+      </div>
+
+      <hr>
+
+      <div class="card" style="margin-bottom:20px;">
+        <span style="padding-right:10px;">123 People Nearby</span> 
+        <a class="btn btn-info" href="#newDeal">+ Add A New Deal</a>
+      </div>
+    </div>
+    {{/user}}
+
+    <div class="col-md-8">
+
+      {{#deals}}
+      <div class="row card">
+        <div class="col-md-6">
+          <img src="{{mainImage.url}}" style="width:100%;"/>
         </div>
-        <p class="text-right">
-          <button class="delete btn btn-danger" data-object-id={{objectId}}>Delete</button>
-        </p>
+        <div class="col-md-6">
+          <p><strong>{{heading}}</strong></p>
+
+          <p>Created <span class="time">{{createdAt}}</span></p>
+
+          <p class="valid-time">{{expiry.iso}}</p>
+
+          <div class="viwedBy" data-created-at="{{createdAt}}">
+            287
+          </div>
+          <p class="text-right">
+            <button class="delete btn btn-danger" data-object-id={{objectId}}>Delete</button>
+          </p>
+
+        </div>
+       
       </div>
+      <div style="height:10px;"></div>
+      {{/deals}}
+
     </div>
-    <div style="height:5vh;"></div>
-  {{/deals}}
+  </div>
+
 </div>

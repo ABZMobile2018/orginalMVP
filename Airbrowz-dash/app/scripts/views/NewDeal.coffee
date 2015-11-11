@@ -28,7 +28,6 @@ class Dash.Views.NewDeal extends Backbone.View
     now.setHours(now.getHours()+5);
     $('#date').data('DateTimePicker').date(now)
 
-
   generateUUID : ()->
     s4 = ->
       Math.floor((1 + Math.random()) * 0x10000).toString(16).substring 1

@@ -65,9 +65,3 @@ class Dash.Views.EditProfile extends Backbone.View
           window.location.href = '#dashboard'
         error:()=>
       )
-
-
-    #   success : ()=>
-    #     window.location.href = '#dashboard'
-
-    # )
