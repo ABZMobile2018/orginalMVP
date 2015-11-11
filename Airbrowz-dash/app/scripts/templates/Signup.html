@@ -38,6 +38,13 @@
     </div>
 
     <div class="form-group">
+      <label class="col-sm-2 control-label">Phone Number (*)</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="phone_number" placeholder="123-123-1234">
+      </div>
+    </div>
+
+    <div class="form-group">
       <label class="col-sm-2 control-label">Address (*)</label>
 
       <div class="col-sm-10">
@@ -62,6 +69,57 @@
         </div>
       </div>
     </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Facebook Link</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="facebook" placeholder="Facebook Link">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Hours of Operation (*)</label>
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Monday</td>
+              <td>Tuesday</td>
+              <td>Wednesday</td>
+              <td>Thursday</td>
+              <td>Friday</td>
+              <td>Satureday</td>
+              <td>Sunday</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Open</td>
+              <td><input id="mon_open" type="time" value="10:00"></td>
+              <td><input id="tue_open" type="time" value="10:00"></td>
+              <td><input id="wed_open" type="time" value="10:00"></td>
+              <td><input id="thu_open" type="time" value="10:00"></td>
+              <td><input id="fri_open" type="time" value="10:00"></td>
+              <td><input id="sat_open" type="time" value="10:00"></td>
+              <td><input id="sun_open" type="time" value="10:00"></td>
+            </tr>
+            <tr>
+              <td>Close</td>
+              <td><input id="mon_close" type="time" value="21:00"></td>
+              <td><input id="tue_close" type="time" value="21:00"></td>
+              <td><input id="wed_close" type="time" value="21:00"></td>
+              <td><input id="thu_close" type="time" value="21:00"></td>
+              <td><input id="fri_close" type="time" value="21:00"></td>
+              <td><input id="sat_close" type="time" value="21:00"></td>
+              <td><input id="sun_close" type="time" value="21:00"></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+
 
     <div class="form-group text-right">
       <p>(*) are required fields</p>
