@@ -9,7 +9,8 @@ class Dash.Views.NewDeal extends Backbone.View
   id: 'main'
 
   events: {
-    'click #create'    : 'create'
+    'click #create'     : 'create'
+    'change #dealImage' : 'fileSelected'
   }
 
   initialize: () ->
@@ -26,9 +27,33 @@ class Dash.Views.NewDeal extends Backbone.View
     now = (new Date())
     now.setHours(now.getHours()+5);
     $('#date').data('DateTimePicker').date(now)
+
+  generateUUID : ()->
+    s4 = ->
+      Math.floor((1 + Math.random()) * 0x10000).toString(16).substring 1
+    s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4()
+
   getYoutubeIdFromURI: (uri) ->
     match = RegExp('[?&]v=([^&]*)').exec(uri)
     match and decodeURIComponent(match[1].replace(/\+/g, ' '))
+
+  fileSelected : (e)->
+    fileUploadControl = $('#dealImage')[0]
+    if fileUploadControl.files.length > 0
+      $('#spinner').removeClass('hidden')
+      file = fileUploadControl.files[0]
+      name = @generateUUID()
+      image = new Parse.File(name, file)
+      TempImages = Parse.Object.extend("TempImages")
+      tempImage = new TempImages()
+      tempImage.set 'file', image
+      tempImage.save(
+        success: (obj)->
+          uri = obj.get('file')._url
+          $('#thumbnail').attr('src', uri)
+          $('#thumbnail').removeClass('hidden')
+          $('#spinner').addClass('hidden')
+      )
 
   create : (e)->
     e.preventDefault()
@@ -49,7 +74,7 @@ class Dash.Views.NewDeal extends Backbone.View
       $("#create").html('Create').prop('disabled', false)
       return alert 'Please make sure that Heading, Image, and Category are sections are set'
 
-    Deals = Parse.Object.extend("Deals");
+    Deals = Parse.Object.extend("Deals")
     deal = new Deals()
     deal.set 'heading', heading
     deal.set 'mainImage', mainImage
