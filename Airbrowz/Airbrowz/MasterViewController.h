@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *proximitySlider;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *categoryCollectionView;
+@property (weak, nonatomic) IBOutlet UIImageView *categoryArrow;
 
 
 - (IBAction)onProximitySelect:(id)sender;

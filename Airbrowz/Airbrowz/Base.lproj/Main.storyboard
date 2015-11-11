@@ -284,8 +284,16 @@
                                             <action selector="onProximitySelect:" destination="fpO-zL-s1v" eventType="touchUpInside" id="6Cg-sY-x7c"/>
                                         </connections>
                                     </slider>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ArrowUp" translatesAutoresizingMaskIntoConstraints="NO" id="ZKY-H0-gPq">
+                                        <rect key="frame" x="273" y="17" width="25" height="25"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="O2q-P9-F32"/>
+                                            <constraint firstAttribute="height" constant="25" id="zMa-b9-cK9"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPK-i1-gsp">
-                                        <rect key="frame" x="312" y="19" width="66" height="21"/>
+                                        <rect key="frame" x="340" y="19" width="66" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -295,10 +303,11 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="DPK-i1-gsp" secondAttribute="trailing" constant="20" id="0gp-Hr-fyX"/>
+                                    <constraint firstAttribute="trailing" secondItem="DPK-i1-gsp" secondAttribute="trailing" constant="50" id="0gp-Hr-fyX"/>
                                     <constraint firstItem="XqG-kn-DZ7" firstAttribute="trailing" secondItem="dNA-mz-yF7" secondAttribute="trailing" id="8IQ-bf-QaC"/>
                                     <constraint firstAttribute="height" constant="60" id="PyA-EU-Pm8"/>
                                     <constraint firstItem="dNA-mz-yF7" firstAttribute="leading" secondItem="NdH-ex-75X" secondAttribute="leading" constant="20" id="RZp-C7-Wol"/>
+                                    <constraint firstItem="DPK-i1-gsp" firstAttribute="leading" secondItem="ZKY-H0-gPq" secondAttribute="trailing" constant="-90" id="vak-tR-4MQ"/>
                                     <constraint firstItem="E16-dE-cCB" firstAttribute="leading" secondItem="NdH-ex-75X" secondAttribute="leading" constant="20" id="vvz-St-Pue"/>
                                 </constraints>
                             </view>
@@ -320,6 +329,7 @@
                     <navigationItem key="navigationItem" title="Airbrowz" id="scI-a4-cb8"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="categoryArrow" destination="ZKY-H0-gPq" id="80K-D3-xZH"/>
                         <outlet property="categoryCollectionView" destination="ynZ-zP-vba" id="iIz-S9-7IU"/>
                         <outlet property="categoryLabel" destination="DPK-i1-gsp" id="hrV-ma-jsJ"/>
                         <outlet property="proximityRangeLabel" destination="XqG-kn-DZ7" id="wc0-FQ-HUy"/>
@@ -663,6 +673,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ArrowUp" width="100" height="100"/>
         <image name="Checkbox_Checked" width="80" height="80"/>
         <image name="Facebook_Logo" width="300" height="90"/>
     </resources>

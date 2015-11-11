@@ -71,10 +71,17 @@
 - (void) configureCategorySelector {
     
     self.categoryLabel.userInteractionEnabled = YES;
+    self.categoryArrow.userInteractionEnabled =YES;
+    
     UITapGestureRecognizer *tapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCategoryLabelClick)];
     [self.categoryLabel addGestureRecognizer:tapGesture];
- 
+    
+    UITapGestureRecognizer *tapGesture2 =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCategoryLabelClick)];
+    [self.categoryArrow addGestureRecognizer:tapGesture2];
+    
+    
     [self.proximitySlider addTarget:self action:@selector(proximityChanged:) forControlEvents:UIControlEventValueChanged];
     [self.proximitySlider setThumbImage:[UIImage imageNamed:@"SliderThumb"] forState:UIControlStateNormal];
     [self.proximitySlider setThumbImage:[UIImage imageNamed:@"SliderThumb"] forState:UIControlStateHighlighted];
@@ -267,6 +274,7 @@
                    categoryViewOriginYWhenOpened,
                    self.categoryCollectionView.frame.size.width,
                    self.categoryCollectionView.frame.size.height);
+        self.categoryArrow.transform = CGAffineTransformRotate(self.categoryArrow.transform, M_PI );
     } completion:^(BOOL finished){
         [self.categoryCollectionView flashScrollIndicators]; // Let userknow it's scrollable!!
     }];
@@ -285,6 +293,7 @@
     if (animated) {
         [UIView animateWithDuration:0.5f animations:^{
             self.categoryCollectionView.frame = rect;
+            self.categoryArrow.transform = CGAffineTransformRotate(self.categoryArrow.transform, M_PI );
         }];
     }
     else {
