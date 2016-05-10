@@ -466,6 +466,9 @@
         case Events:
             categoryName = @"Events";
             break;
+        case Grocery:
+            categoryName = @"Grocery";
+            break;
         case Misc:
             categoryName =@"Misc";
             break;
