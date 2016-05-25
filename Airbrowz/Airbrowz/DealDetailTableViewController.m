@@ -300,17 +300,20 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
          NSLog(@"did select: modelInde8x %d", modelIndex);
         DealImageScrollViewController *enlargeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DealImageScrollView"];
 
-        
+        PFObject *rowModel;
         if (modelIndex == 0) {
-            enlargeViewController.imageFile = self.model[@"mainImage"];
-            NSLog(@"mainImage %@", self.model[@"mainImage"]);
-            NSLog(@"set mainImage %@", enlargeViewController.imageView.file);
+            rowModel = self.model;
         }
         else {
-              enlargeViewController.imageFile = [self.moreDealsModel objectAtIndex: modelIndex - 1][@"mainImage"];
+            rowModel = [self.moreDealsModel objectAtIndex: modelIndex - 1];
+
         }
 
- 
+        enlargeViewController.imageFile = rowModel[@"mainImage"];
+        enlargeViewController.contentURL = [enlargeViewController.imageFile url];
+        enlargeViewController.contentHeading = [NSString stringWithFormat:@"Airbrowz: %@ Deal", rowModel[@"owner"][@"company_name"]];
+        enlargeViewController.contentDescription = rowModel[@"heading"];
+        
         
  
         [self.navigationController pushViewController:enlargeViewController animated:YES];

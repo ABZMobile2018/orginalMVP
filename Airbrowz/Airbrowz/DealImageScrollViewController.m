@@ -43,9 +43,9 @@
         
         // Facebook button tapped.
         FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-        content.contentURL = [NSURL URLWithString:@"https://developers.facebook.com"];
-        content.contentTitle = @"Content Title";
-        content.contentDescription = @"Content Description";
+        content.contentURL = [NSURL URLWithString:self.contentURL];
+        content.contentTitle = self.contentHeading;
+        content.contentDescription = self.contentDescription;
 
         FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
         dialog.fromViewController = self;
