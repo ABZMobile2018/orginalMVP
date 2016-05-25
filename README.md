@@ -17,8 +17,8 @@
 11 = Home & Garden  
 12 = Services  
 13 = Sports, Outdoor & Travel  
-14 = Events 
-15 = Grocery
+14 = Events  
+15 = Grocery  
 16 = Misc  
 
 ### \<phone> in User Table

@@ -138,7 +138,7 @@
             
             NSDate *currentDate =  [[NSDate alloc] init];
             [query whereKey:@"expiry" greaterThan: currentDate];
-            
+            [query orderByAscending:@"expiry"];
             // Limit what could be a lot of points.
             query.limit = 100;
             

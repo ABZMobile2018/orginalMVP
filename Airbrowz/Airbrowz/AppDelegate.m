@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "DataMigrator.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 @import GoogleMaps;
 
 @interface AppDelegate ()
@@ -44,6 +45,9 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     
+    //FB
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     
     
     return YES;
@@ -56,6 +60,16 @@
     [currentInstallation setDeviceTokenFromData:deviceToken];
     currentInstallation.channels = @[ @"global" ];
     [currentInstallation saveInBackground];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:sourceApplication
+                                                               annotation:annotation
+                    ];
+    // Add any custom logic here.
+    return handled;
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

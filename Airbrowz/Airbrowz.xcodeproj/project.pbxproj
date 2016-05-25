@@ -27,6 +27,10 @@
 		B09B26671BDEBF6C0053C595 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09B26661BDEBF6C0053C595 /* CategoryCollectionViewCell.m */; };
 		B09BB5421BE02F2E00E02FB3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */; };
 		B09BB5451BE0722D00E02FB3 /* AirbrowzCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */; };
+		B0B416FE1CF549AC007D361D /* DealImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B416FD1CF549AC007D361D /* DealImageScrollViewController.m */; };
+		B0B417021CF589FD007D361D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B416FF1CF589FD007D361D /* FBSDKCoreKit.framework */; };
+		B0B417031CF589FD007D361D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B417001CF589FD007D361D /* FBSDKLoginKit.framework */; };
+		B0B417041CF589FD007D361D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B417011CF589FD007D361D /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,11 @@
 		B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B09BB5431BE0722D00E02FB3 /* AirbrowzCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirbrowzCommons.h; sourceTree = "<group>"; };
 		B09BB5441BE0722D00E02FB3 /* AirbrowzCommons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirbrowzCommons.m; sourceTree = "<group>"; };
+		B0B416FC1CF549AC007D361D /* DealImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealImageScrollViewController.h; sourceTree = "<group>"; };
+		B0B416FD1CF549AC007D361D /* DealImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealImageScrollViewController.m; sourceTree = "<group>"; };
+		B0B416FF1CF589FD007D361D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B0B417001CF589FD007D361D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B0B417011CF589FD007D361D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F28CEAEB145A66F234F3E7E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +104,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B09BB5421BE02F2E00E02FB3 /* CoreLocation.framework in Frameworks */,
+				B0B417021CF589FD007D361D /* FBSDKCoreKit.framework in Frameworks */,
+				B0B417041CF589FD007D361D /* FBSDKShareKit.framework in Frameworks */,
+				B0B417031CF589FD007D361D /* FBSDKLoginKit.framework in Frameworks */,
 				0E2178C551BDF5BD3B77B762 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +140,9 @@
 		0A5318BD09EA8AB0B09F9D49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0B416FF1CF589FD007D361D /* FBSDKCoreKit.framework */,
+				B0B417001CF589FD007D361D /* FBSDKLoginKit.framework */,
+				B0B417011CF589FD007D361D /* FBSDKShareKit.framework */,
 				B09BB5411BE02F2E00E02FB3 /* CoreLocation.framework */,
 				F28CEAEB145A66F234F3E7E8 /* libPods.a */,
 			);
@@ -210,6 +225,8 @@
 				B09B265C1BDDF27C0053C595 /* MasterViewController.m */,
 				B05196EC1BE5E8E3000E8CEA /* DealDetailTableViewController.h */,
 				B05196ED1BE5E8E3000E8CEA /* DealDetailTableViewController.m */,
+				B0B416FC1CF549AC007D361D /* DealImageScrollViewController.h */,
+				B0B416FD1CF549AC007D361D /* DealImageScrollViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -435,6 +452,7 @@
 				B05196EE1BE5E8E3000E8CEA /* DealDetailTableViewController.m in Sources */,
 				B05196FA1BE60CB6000E8CEA /* DealDetailDealTableViewCell.m in Sources */,
 				B09B26291BDDE56E0053C595 /* main.m in Sources */,
+				B0B416FE1CF549AC007D361D /* DealImageScrollViewController.m in Sources */,
 				B09B26611BDE0BBF0053C595 /* DealTableViewCell.m in Sources */,
 				B09BB5451BE0722D00E02FB3 /* AirbrowzCommons.m in Sources */,
 			);
@@ -579,6 +597,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Airbrowz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -596,6 +618,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Airbrowz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
