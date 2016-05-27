@@ -84,8 +84,10 @@ class Dash.Views.NewDeal extends Backbone.View
 
     # Get longitude and latitude
     postal_code = Parse.User.current().get('postal_code')
+    console.log postal_code
     query_uri = "http://maps.googleapis.com/maps/api/geocode/json?address=#{ postal_code }"
     $.post query_uri, (ret)->
+      console.log ret
       location = new Parse.GeoPoint(
         {
           latitude: ret.results[0].geometry.location.lat, 
