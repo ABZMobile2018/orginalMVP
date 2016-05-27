@@ -32,6 +32,7 @@ typedef enum {
     Services,
     SportsOutdoorTravel,
     Events,
+    Grocery,
     Misc
 } DealCategory;
 

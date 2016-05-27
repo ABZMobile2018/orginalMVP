@@ -47,16 +47,25 @@
 
 -(NSMutableArray *) applyFilterOnRawModel: (NSArray *) rawModel {
     NSMutableArray *result = [[NSMutableArray alloc] init];
+    NSMutableSet *uniqueOwner = [[NSMutableSet alloc] init]; // HashSet for validating unique company
     for (PFObject *deal in rawModel) {
         
         NSInteger cat = [deal[@"category"] intValue];
         PFGeoPoint *dealLoc = deal[@"location"];
-
+        
+        // Do category filter
         if ([[self.categoryFilterArray objectAtIndex:cat] boolValue]) {
+            
+            // Do distance filter
             // * 1000 for km to m conversion
-  
             if ([dealLoc distanceInKilometersTo: self.currentLocation] * 1000 <= self.proximitySlider.value) {
-                [result addObject: deal];
+                // Do unique owner filter -- one filtered model per owner
+                NSString *ownerId = [deal[@"owner"] objectId];
+                if (! [uniqueOwner containsObject: ownerId]) {
+                    [result addObject: deal];
+                    [uniqueOwner addObject: ownerId];
+                }
+                
             }
         }
     }
@@ -138,7 +147,7 @@
             
             NSDate *currentDate =  [[NSDate alloc] init];
             [query whereKey:@"expiry" greaterThan: currentDate];
-            
+            [query orderByDescending:@"updatedAt"];
             // Limit what could be a lot of points.
             query.limit = 100;
             
@@ -393,7 +402,7 @@
 -(NSArray *) moreDealsFromOwner:(NSString *) ownerId except:(NSString*) exceptObjectId {
     NSMutableArray *result = [[NSMutableArray alloc] init];
     
-    for (PFObject *deal in self.dealsFilteredModel) {
+    for (PFObject *deal in self.dealsRawModel) {
         if ([[deal[@"owner"] objectId] isEqualToString: ownerId]) {
 
             if (![[deal objectId] isEqualToString:exceptObjectId]) {
@@ -465,6 +474,9 @@
             break;
         case Events:
             categoryName = @"Events";
+            break;
+        case Grocery:
+            categoryName = @"Grocery";
             break;
         case Misc:
             categoryName =@"Misc";

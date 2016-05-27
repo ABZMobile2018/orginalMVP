@@ -18,7 +18,8 @@
 12 = Services  
 13 = Sports, Outdoor & Travel  
 14 = Events  
-15 = Misc  
+15 = Grocery  
+16 = Misc  
 
 ### \<phone> in User Table
 Stored as plain string "(647) - 456 - 8551"

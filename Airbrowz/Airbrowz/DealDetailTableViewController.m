@@ -12,6 +12,7 @@
 #import "DealDetailGmapTableViewCell.h"
 #import "DealDetailYoutubeTableViewCell.h"
 #import "AirbrowzCommons.h"
+#import "DealImageScrollViewController.h"
 
 @import GoogleMaps;
 
@@ -72,22 +73,28 @@
     switch(indexPath.row) {
         case Cell_CompanyDetails:
             cell = [self dequeueAndConfigureCellForCompanyInfo:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             break;
         case Cell_MainDealImage:
             cell= [self dequeueAndConfigureCellForDeal:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
             break;
         
         case Cell_GoogleMaps:
             cell = [self dequeueAndConfigureCellForGmap:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             break;
         case Cell_YoutubeVideo:
             cell = self.youtubeVideoCell; // We're preconfiguring youtube videocell since takes long time to init
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             break;
         case Cell_MoreDealsHeading:
             cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellReuseIdentifierForIndexPath:indexPath] forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             break;
         default:
             cell = [self dequeueAndConfigureCellForDeal:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     
     return cell;
@@ -282,6 +289,37 @@
     }*/
 
 }
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row > Cell_MoreDealsHeading) {
+       
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        int modelIndex = (int)indexPath.row - Cell_MainDealImage;
+         NSLog(@"did select: modelInde8x %d", modelIndex);
+        DealImageScrollViewController *enlargeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DealImageScrollView"];
+
+        PFObject *rowModel;
+        if (modelIndex == 0) {
+            rowModel = self.model;
+        }
+        else {
+            rowModel = [self.moreDealsModel objectAtIndex: modelIndex - 1];
+
+        }
+
+        enlargeViewController.imageFile = rowModel[@"mainImage"];
+        enlargeViewController.contentURL = [enlargeViewController.imageFile url];
+        enlargeViewController.contentHeading = [NSString stringWithFormat:@"Airbrowz: %@ Deal", rowModel[@"owner"][@"company_name"]];
+        enlargeViewController.contentDescription = rowModel[@"heading"];
+        
+        
+ 
+        [self.navigationController pushViewController:enlargeViewController animated:YES];
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.
