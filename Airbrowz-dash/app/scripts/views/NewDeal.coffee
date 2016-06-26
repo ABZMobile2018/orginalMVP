@@ -56,6 +56,7 @@ class Dash.Views.NewDeal extends Backbone.View
       )
 
   create : (e)->
+
     e.preventDefault()
     $("#create").html('submitting...').prop('disabled', true)
 
@@ -70,9 +71,10 @@ class Dash.Views.NewDeal extends Backbone.View
     category = parseInt($('#category').val())
 
     unless (heading and mainImage and category >= 0)
-      console.log heading, mainImage, category
+      # console.log heading, mainImage, category
       $("#create").html('Create').prop('disabled', false)
       return alert 'Please make sure that Heading, Image, and Category are sections are set'
+
 
     Deals = Parse.Object.extend("Deals")
     deal = new Deals()
@@ -84,9 +86,9 @@ class Dash.Views.NewDeal extends Backbone.View
 
     # Get longitude and latitude
     postal_code = Parse.User.current().get('postal_code')
-    console.log postal_code
+    
     query_uri = "https://maps.googleapis.com/maps/api/geocode/json?address=#{ postal_code }"
-    $.post query_uri, (ret)->
+    $.post query_uri, (ret)=>
       console.log ret
       location = new Parse.GeoPoint(
         {
@@ -97,9 +99,9 @@ class Dash.Views.NewDeal extends Backbone.View
       deal.set 'owner', Parse.User.current()
 
       deal.save null, {
-        success : ()->
+        success : ()=>
           console.log 'saved'
-
+          @undelegateEvents()
           msg = heading
           if Parse.User.current().get('company_name')
             company_name = Parse.User.current().get('company_name')
