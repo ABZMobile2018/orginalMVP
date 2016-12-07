@@ -1,10 +1,6 @@
 //
 //  MasterViewController.m
 //  Airbrowz
-//
-//  Created by Denny on 2015-10-26.
-//  Copyright © 2015 Kiwi. All rights reserved.
-//
 
 #import "MasterViewController.h"
 #import "DealTableViewCell.h"

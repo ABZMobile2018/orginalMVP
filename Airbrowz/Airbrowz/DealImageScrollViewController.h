@@ -1,10 +1,6 @@
 //
 //  DealImageScrollViewController.h
 //  Airbrowz
-//
-//  Created by Denny on 2016-05-24.
-//  Copyright © 2016 Kiwi. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>

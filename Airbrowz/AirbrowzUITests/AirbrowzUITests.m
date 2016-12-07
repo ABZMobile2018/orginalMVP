@@ -1,10 +1,6 @@
 //
 //  AirbrowzUITests.m
 //  AirbrowzUITests
-//
-//  Created by Denny on 2015-10-26.
-//  Copyright © 2015 Kiwi. All rights reserved.
-//
 
 #import <XCTest/XCTest.h>
 
